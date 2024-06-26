@@ -16,9 +16,11 @@ PROJECT= `pwd`
 #IMAGEDIR := images
 #CONFIG := config.yaml
 #INPUT := TITLE.md
+SYSTEM_DOCXFRONTPAGE := $(MDDIR)/frontpage.md
 #DOCXFRONTPAGE := frontpage.md
-#TARGET := TARGET-$(DATE)-$(HASH)
+TARGET := TARGET-$(DATE)-$(HASH)
 #REVERSE_INPUT := reverse-input.docx
 #REFERENCE := $(MISC)/ref.docx
+REFERENCE := ./local_reference.docx
 ##
 include $(MISC_SYS)/Makefile
