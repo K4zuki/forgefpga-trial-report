@@ -1,6 +1,6 @@
 ---
 title: ForgeFPGA 試してみたレポート
-subtitle: 幻ではなかった
+subtitle: "[ 朗報 ] 幻ではなかった模様"
 circle: KY技研
 author: K4zuki
 comiket: C104 2日目 西2
@@ -15,7 +15,7 @@ docrevision: "1.0"
 #  - angle=0
 
 verbcolored: false
-rmnote: false
+rmnote: true
 toc-title: "目次"
 
 svgbob:
@@ -75,7 +75,7 @@ docx_coreprop:
 
   table-alignment-in-page: center # left / center /right
   table-cell-vertical-alignment: center # top / center / bottom / both
-  read-only-recommended: true
+  read-only-recommended: false
   disable-table-autofit: false # setting 'true' requires explicit column widths setting
   table:
     "Normal Table": "Centered"
