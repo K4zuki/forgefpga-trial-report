@@ -76,7 +76,8 @@ docx_coreprop:
   table-alignment-in-page: center # left / center /right
   table-cell-vertical-alignment: center # top / center / bottom / both
   read-only-recommended: false
-  disable-table-autofit: false # setting 'true' requires explicit column widths setting
+  extra_section: true
+  disable-table-autofit: false # requires explicit column widths setting for *every* table when setting 'true'
   table:
     "Normal Table": "Centered"
   paragraph:
@@ -84,4 +85,12 @@ docx_coreprop:
     "Normal": "Body Text"
     "First Paragraph": "Body Text"
   character:
+  okuzuke:
+    table-style: "Centered"
+    para-style: "Table Body Center"
+    rows:
+      - "ForgeFPGA 試してみたレポート"
+      - "K4zuki / KY技研"
+      - "C104 / 2024"
+      - "Markdown x Pandoc (Docx writer)"
 ...
