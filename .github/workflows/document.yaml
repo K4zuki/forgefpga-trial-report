@@ -31,8 +31,8 @@ jobs:
           qr ${DOWNLOAD_URL_BASE}/${RELEASE_VERSION}/${TARGET//.html/}.pdf > images/QRcode.png
       - name: Build document
         run: |
-          make initdir html docx
+          make initdir docx
       - name: Upload artifact files (at a push)
         uses: actions/upload-artifact@v3
         with:
-          path: Out
+          path: docs/Out

@@ -1,26 +1,7 @@
-ifeq ($(OS),Windows_NT)
-HOME = C:/Users/$(USERNAME)
-endif
-PIPBASE= $(shell get-pip-base)
-PANSTYLES= $(PIPBASE)/var
-MISC= $(PANSTYLES)/pandoc_misc
-MISC_SYS = $(MISC)/system
-MISC_USER = $(MISC)/user
-include $(MISC_SYS)/Makefile.in
-PROJECT= `pwd`
+clean:
+	cd docs; \
+	make initdir clean
 
-## userland: uncomment and replace
-#MDDIR := markdown
-#DATADIR := data
-#TARGETDIR := Out
-#IMAGEDIR := images
-#CONFIG := config.yaml
-#INPUT := TITLE.md
-SYSTEM_DOCXFRONTPAGE := $(MDDIR)/frontpage.md
-#DOCXFRONTPAGE := frontpage.md
-TARGET := ForgeFPGA-Trial-Report-$(DATE)-$(HASH)
-#REVERSE_INPUT := reverse-input.docx
-#REFERENCE := $(MISC)/ref.docx
-REFERENCE := ./local_reference.docx
-##
-include $(MISC_SYS)/Makefile
+docx:
+	cd docs; \
+	make initdir docx

@@ -4,7 +4,7 @@
 
 この本は、~~ルネサス~~ダイアログセミコンダクターの小規模FPGA「ForgeFPGA」**SLG47910**の評価キットを購入し、簡単なプロジェクトを作ってデバッグするまでをまとめたドキュメントです。
 2021年に魅力的な内容をプレスリリース[^1]したあと3年にわたって続報がなく、「_幻FPGA_」とか
-「_ForgetFPGA_」など散々揶揄されてきた[^2][^3] ForgeFPGAですが、
+「_Forge**T**FPGA_」など散々揶揄されてきた[^2][^3] ForgeFPGAですが、
 2024年6月、突然Mouser/Digikey/直販サイトで評価キットが入手可能になりました。筆者も、ちょうど夏コミに間に合う時期ということで、小さい方のキットを
 Mouserで購入して試すことにしました。あいにくICはまだ入手できず、キットに付属するサンプルも10個しかないので、自作基板は作りません。
 
@@ -29,6 +29,10 @@ Mouserで購入して試すことにしました。あいにくICはまだ入手
 
 - [SLG7EVBFORGE（評価ボード） Mouser販売ページ](https://www.mouser.jp/ProductDetail/Renesas-Dialog/SLG7EVBFORGE?qs=2wMNvWM5ZX5HC1b2oIQaEg%3D%3D)
 - [SLG7EVBFORGE（評価ボード） DigiKey販売ページ](https://www.digikey.jp/en/products/detail/SLG7EVBFORGE/1695-SLG7EVBFORGE-ND/22972057)
+
+- [開発環境ダウンロードページ](https://www.renesas.com/us/en/software-tool/go-configure-software-hub)
+- [開発環境マニュアル](https://www.renesas.com/us/en/document/mat/go-configure-software-hub-user-guide)
+- [開発環境 Windows版](https://www.renesas.com/us/en/document/sws/go-configure-software-hub-windows-64-bit)
 
 \toc
 
