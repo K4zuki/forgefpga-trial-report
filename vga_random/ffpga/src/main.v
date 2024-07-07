@@ -1,46 +1,32 @@
 (* top *) module simple_counter(
   (* iopad_external_pin, clkbuf_inhibit *) input  i_clk,
+  (* iopad_external_pin *) output                 osc_en,
   (* iopad_external_pin *) input                  i_nreset,
-  (* iopad_external_pin *) output [7:0]           o_lfsr,
-  (* iopad_external_pin *) output                 oe,
-  (* iopad_external_pin *) output                 osc_en
-
+  (* iopad_external_pin *) output  [7:0]          o_lfsr,
+  (* iopad_external_pin *) output  [7:0]          lfsr_oe,
+  (* iopad_external_pin *) output reg             osc_out,
+  (* iopad_external_pin *) output                 osc_out_en
 );
 
-  assign oe = 1'b1;
+  reg [7:0] lfsr;
+  assign lfsr_oe = 8'b11111111;
   assign osc_en = 1'b1;
+  assign osc_out_en = 1'b1;
 
-  lfsr uut(
-    .CLK  (i_clk      ),
-    .load (1'b0       ),
-    .seed (8'd100     ),
-    .out  (o_lfsr[7:0])
-  );
+  always @(posedge i_clk) begin
+    osc_out = ~osc_out;
+  end
 
-
-endmodule
-
-module lfsr (CLK, load, seed, out);
-
-    // port
-    input        CLK;
-    input        load;
-    input  [7:0] seed;
-
-    output [7:0] out;
-
-    // internal
-    reg    [7:0] r;
-
-    always @(posedge CLK) begin
-        if (load)
-            r <= seed;
-        else begin
-            // 8 bit tap 8,6,5,4
-            r <= {r[0], r[7], r[0]^r[6], r[0]^r[5], r[0]^r[4], r[3], r[2], r[1]};
-        end
+  always @(posedge i_clk) begin
+    //  http://www.neko.ne.jp/~freewing/fpga/lfsr_verilog/
+    if (i_nreset==1'b0)
+        lfsr <= 8'b11111111;
+    else begin
+        // 8 bit tap 8,6,5,4
+        lfsr <= {lfsr[0], lfsr[7], lfsr[0]^lfsr[6], lfsr[0]^lfsr[5], lfsr[0]^lfsr[4], lfsr[3:1]};
     end
+  end
 
-    assign out = r;
+  assign o_lfsr = lfsr;
 
 endmodule
