@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GPDProject version="32" oldestCompatibleVersion="32" GPDVersion="6.43.002" lastChange="7 Jul 2024 23:49:19" projectChecksumState="1" projectChecksum="7754527c">
+<GPDProject version="32" oldestCompatibleVersion="32" GPDVersion="6.43.002" lastChange="15 Jul 2024 19:19:58" projectChecksumState="1" projectChecksum="a6baf468">
     <generalProjectSettings/>
     <chip family="04" type="06" friendlyName="FFPGA" partNumber="67" package="26">
         <nvmData registerLenght="480">0 0 0 28 0 0 0 0 A5 A5 A5 A5 0 0 0 0 0 0 0 0 5A 5A 5A 5A 2 0 0 0 22 22 22 22 22 22 22 22 22 22 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</nvmData>
@@ -22,51 +22,67 @@
         </item>
         <item id="4" caption="GPIO0 (PIN 13)">
             <graphics pos="(35.00,592.66)" angle="0" flipping="0" hidden="0" tOrigin="(20.00,10.00)"/>
+            <textLabel pos="(9.00,-29.00)" angle="0.00" textColor="#ffff00ff" backgroundColor="#14141464">G0</textLabel>
         </item>
         <item id="5" caption="GPIO1 (PIN 14)">
             <graphics pos="(150.00,542.00)" angle="0" flipping="0" hidden="0" tOrigin="(20.00,10.00)"/>
+            <textLabel pos="(9.00,-29.00)" angle="0.00" textColor="#ffff00ff" backgroundColor="#14141464">G1</textLabel>
         </item>
         <item id="6" caption="GPIO2 (PIN 15)">
             <graphics pos="(35.00,493.59)" angle="0" flipping="0" hidden="0" tOrigin="(20.00,10.00)"/>
+            <textLabel pos="(9.00,-29.00)" angle="0.00" textColor="#ffff00ff" backgroundColor="#14141464">G2</textLabel>
         </item>
         <item id="7" caption="GPIO3 (PIN 16)">
             <graphics pos="(150.00,444.09)" angle="0" flipping="0" hidden="0" tOrigin="(20.00,10.00)"/>
+            <textLabel pos="(9.00,-29.00)" angle="0.00" textColor="#ffff00ff" backgroundColor="#14141464">G3</textLabel>
         </item>
         <item id="8" caption="GPIO4 (PIN 17)">
             <graphics pos="(35.00,394.74)" angle="0" flipping="0" hidden="0" tOrigin="(20.00,10.00)"/>
+            <textLabel pos="(-1.00,-29.00)" angle="0.00" textColor="#ffff00ff" backgroundColor="#14141464">HSYNC</textLabel>
         </item>
         <item id="9" caption="GPIO5 (PIN 18)">
             <graphics pos="(35.00,197.00)" angle="0" flipping="0" hidden="0" tOrigin="(20.00,10.00)"/>
+            <textLabel pos="(-0.50,-29.00)" angle="0.00" textColor="#ffff00ff" backgroundColor="#14141464">VSYNC</textLabel>
         </item>
         <item id="10" caption="GPIO6 (PIN 19)">
             <graphics pos="(150.00,148.09)" angle="0" flipping="0" hidden="0" tOrigin="(20.00,10.00)"/>
+            <textLabel pos="(8.50,-29.00)" angle="0.00" textColor="#ffff00ff" backgroundColor="#14141464">NC</textLabel>
         </item>
         <item id="11" caption="GPIO7 (PIN 20)">
             <graphics pos="(35.00,98.66)" angle="0" flipping="0" hidden="0" tOrigin="(20.00,10.00)"/>
+            <textLabel pos="(8.50,-29.00)" angle="0.00" textColor="#ffff00ff" backgroundColor="#14141464">NC</textLabel>
         </item>
         <item id="12" caption="GPIO8 (PIN 23)">
             <graphics pos="(1094.00,49.99)" angle="0" flipping="1" hidden="0" tOrigin="(20.00,10.00)"/>
+            <textLabel pos="(9.50,-29.00)" angle="0.00" textColor="#ffff00ff" backgroundColor="#14141464">R0</textLabel>
         </item>
         <item id="13" caption="GPIO9 (PIN 24)">
             <graphics pos="(1200.00,102.11)" angle="0" flipping="1" hidden="0" tOrigin="(20.00,10.00)"/>
+            <textLabel pos="(9.50,-29.00)" angle="0.00" textColor="#ffff00ff" backgroundColor="#14141464">R1</textLabel>
         </item>
         <item id="14" caption="GPIO10 (PIN 1)">
             <graphics pos="(1094.00,154.03)" angle="0" flipping="1" hidden="0" tOrigin="(20.00,10.00)"/>
+            <textLabel pos="(9.50,-29.00)" angle="0.00" textColor="#ffff00ff" backgroundColor="#14141464">R2</textLabel>
         </item>
         <item id="15" caption="GPIO11 (PIN 2)">
             <graphics pos="(1200.00,206.11)" angle="0" flipping="1" hidden="0" tOrigin="(20.00,10.00)"/>
+            <textLabel pos="(9.50,-29.00)" angle="0.00" textColor="#ffff00ff" backgroundColor="#14141464">R3</textLabel>
         </item>
         <item id="16" caption="GPIO12 (PIN 3)">
             <graphics pos="(1094.00,258.20)" angle="0" flipping="1" hidden="0" tOrigin="(20.00,10.00)"/>
+            <textLabel pos="(10.00,-29.00)" angle="0.00" textColor="#ffff00ff" backgroundColor="#14141464">B0</textLabel>
         </item>
         <item id="17" caption="GPIO13 (PIN 4)">
             <graphics pos="(1200.00,310.28)" angle="0" flipping="1" hidden="0" tOrigin="(20.00,10.00)"/>
+            <textLabel pos="(10.00,-29.00)" angle="0.00" textColor="#ffff00ff" backgroundColor="#14141464">B1</textLabel>
         </item>
         <item id="18" caption="GPIO14 (PIN 5)">
             <graphics pos="(1094.00,397.09)" angle="0" flipping="1" hidden="0" tOrigin="(20.00,10.00)"/>
+            <textLabel pos="(10.00,-29.00)" angle="0.00" textColor="#ffff00ff" backgroundColor="#14141464">B2</textLabel>
         </item>
         <item id="19" caption="GPIO15 (PIN 6)">
             <graphics pos="(1200.00,449.75)" angle="0" flipping="1" hidden="0" tOrigin="(20.00,10.00)"/>
+            <textLabel pos="(10.00,-29.00)" angle="0.00" textColor="#ffff00ff" backgroundColor="#14141464">B3</textLabel>
         </item>
         <item id="20" caption="GPIO18 (PIN 9/GrP0)">
             <graphics pos="(1094.00,604.84)" angle="0" flipping="1" hidden="0" tOrigin="(20.00,10.00)"/>
@@ -495,7 +511,7 @@
                         <TPC ID="40" Type="1">
                             <BaseOption LEDEnable="0" LEDInvertion="0" HotKey="86" GlobalLink="1"/>
                         </TPC>
-                        <TPC ID="1021" Type="12">
+                        <TPC ID="1021" Type="8">
                             <BaseOption LEDEnable="0" LEDInvertion="0" HotKey="81" GlobalLink="0"/>
                             <GeneratorOpt GenType="5">
                                 <constantVoltageGenerator v="1.200000e+00|4">
@@ -503,7 +519,7 @@
                                 </constantVoltageGenerator>
                             </GeneratorOpt>
                         </TPC>
-                        <TPC ID="1022" Type="12">
+                        <TPC ID="1022" Type="8">
                             <BaseOption LEDEnable="0" LEDInvertion="0" HotKey="87" GlobalLink="0"/>
                             <GeneratorOpt GenType="5">
                                 <constantVoltageGenerator v="2.300000e+00|4">
@@ -680,7 +696,7 @@
             <openedTab>main.v</openedTab>
             <openedTab>I/O Planner</openedTab>
             <openedTab>Floorplan</openedTab>
-            <openedTab>lfsr.vt</openedTab>
+            <openedTab>lfsr12.v</openedTab>
         </openedTabs>
         <pipelineStagesStates>
             <pipelineStageState>
@@ -695,6 +711,8 @@
         <modules>
             <scr>
                 <module filename="main.v"/>
+                <module filename="lfsr12.v"/>
+                <module filename="vga_syncgen.v"/>
             </scr>
             <lib/>
             <sim>
@@ -703,45 +721,99 @@
             <netlists/>
         </modules>
         <io-spec-tool>
-            <records filter="16">
+            <records filter="0">
                 <record id="CLK_t[0:0]_W_in0">
                     <port-name>i_clk</port-name>
                 </record>
                 <record id="IOB_t[0:0]_xy[0:10]_out0">
-                    <port-name>osc_out</port-name>
+                    <port-name>HSYNC</port-name>
                 </record>
                 <record id="IOB_t[0:0]_xy[0:10]_out1">
-                    <port-name>osc_out_en</port-name>
+                    <port-name>HSYNC_OE</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[0:22]_out0">
+                    <port-name>VSYNC</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[0:22]_out1">
+                    <port-name>VSYNC_OE</port-name>
                 </record>
                 <record id="IOB_t[0:0]_xy[0:25]_out0">
                     <port-name>osc_en</port-name>
                 </record>
                 <record id="IOB_t[0:0]_xy[0:6]_out0">
-                    <port-name>o_lfsr[0]</port-name>
+                    <port-name>green[0]</port-name>
                 </record>
                 <record id="IOB_t[0:0]_xy[0:6]_out1">
-                    <port-name>lfsr_oe[0]</port-name>
+                    <port-name>green_oe[0]</port-name>
                 </record>
                 <record id="IOB_t[0:0]_xy[0:7]_out0">
-                    <port-name>o_lfsr[1]</port-name>
+                    <port-name>green[1]</port-name>
                 </record>
                 <record id="IOB_t[0:0]_xy[0:7]_out1">
-                    <port-name>lfsr_oe[1]</port-name>
+                    <port-name>green_oe[1]</port-name>
                 </record>
                 <record id="IOB_t[0:0]_xy[0:8]_out0">
-                    <port-name>o_lfsr[2]</port-name>
+                    <port-name>green[2]</port-name>
                 </record>
                 <record id="IOB_t[0:0]_xy[0:8]_out1">
-                    <port-name>lfsr_oe[2]</port-name>
+                    <port-name>green_oe[2]</port-name>
                 </record>
                 <record id="IOB_t[0:0]_xy[0:9]_out0">
-                    <port-name>o_lfsr[3]</port-name>
+                    <port-name>green[3]</port-name>
                 </record>
                 <record id="IOB_t[0:0]_xy[0:9]_out1">
-                    <port-name>lfsr_oe[3]</port-name>
+                    <port-name>green_oe[3]</port-name>
                 </record>
                 <record id="IOB_t[0:0]_xy[31:10]_in0">
                     <port-name>i_nreset</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:22]_out0">
+                    <port-name>blue[1]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:22]_out1">
+                    <port-name>blue_oe[1]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:23]_out0">
+                    <port-name>blue[0]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:23]_out1">
+                    <port-name>blue_oe[0]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:24]_out0">
+                    <port-name>red[3]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:24]_out1">
+                    <port-name>red_oe[3]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:25]_out0">
+                    <port-name>red[2]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:25]_out1">
+                    <port-name>red_oe[2]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:26]_out0">
+                    <port-name>red[1]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:26]_out1">
+                    <port-name>red_oe[1]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:27]_out0">
+                    <port-name>red[0]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:27]_out1">
+                    <port-name>red_oe[0]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:8]_out0">
+                    <port-name>blue[3]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:8]_out1">
+                    <port-name>blue_oe[3]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:9]_out0">
+                    <port-name>blue[2]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:9]_out1">
+                    <port-name>blue_oe[2]</port-name>
                 </record>
             </records>
         </io-spec-tool>
