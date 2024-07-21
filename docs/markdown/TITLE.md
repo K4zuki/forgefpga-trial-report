@@ -36,6 +36,53 @@ Mouserで購入して試すことにしました。あいにくICはまだ入手
 
 \toc
 
+# ForgeFPGA SLG47910 の主な仕様
+
+以下に主な仕様一覧を示します。0.5mmピッチ24ピンQFN、この内最大19ピンをIOに使えます。電源はIOとコアで**2系統**必要です。
+また、IOレベルは低めの**2.5Vまたは1.8V系**で動作します。Arduinoやラズパイを直結するとたぶん壊れます。
+ビットストリーム（内部結線情報）のSPIフラッシュからのロード、SPIホストからの書き込み、内蔵ワンタイムROMからのロードができます。
+
+::: {.table noheader=true}
+
+|    パッケージ    | 0.5mmピッチ24ピンQFN（EPなし）                  |
+|:-----------:|----------------------------------------|
+| 動作電圧（VDDIO） | 1.71 - **2.75**V (LVCMOS18 / LVCMOS25) |
+| 動作電圧（VDDC）  | 1.1V &plusmn; 10%                      |
+|  ５ビットLUT数   | 1120                                   |
+|    DFF数     | 1120                                   |
+|   動作温度範囲    | -40 - 85 &deg;C                        |
+|  内蔵クロック周波数  | 50MHz                                  |
+|   最大GPIO数   | 19                                     |
+
+Table: SLG47910 Spec {#tbl:slg47910-spec}
+:::
+
+::: rmnote
+
+Package:
+QFN-24
+
+Description:
+The SLG47910 provides a small, low power component for common FPGA applications. The user creates their circuit design by programming the One Time Programmable (OTP) Non-Volatile Memory (NVM) to configure the interconnect logic, the IO pins, and the macrocells of the SLG47910. This highly versatile device allows a wide variety of FPGA applications to be designed within a very small, low power integrated circuit. The macrocells in the device include the following:
+Dense Array of Configurable Logic:
+1120 5-bit LUTs;
+1120 DFFs;
+5 kb distributed memory;
+32 kb BRAM;
+Configurable through NVM and/or SPI interface;
+50 MHz On-Chip Oscillator:
+Phase-locked Loop (PLL):
+Input from external source or internal On-Chip Oscillator;
+Power Supply:
+VDDIO: 1.71 V to 2.75 V;
+VDDCore: 1.1 V ± 10%;
+Power-On-Reset (POR);
+GPIO Count
+19 GPIOs
+Operating Temperature Range: -40 °C to 85 °C
+
+:::
+
 # 設計ソフト
 
 # 評価ボード
