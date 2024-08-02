@@ -20,9 +20,9 @@ Mouserで購入して試すことにしました。あいにくICはまだ入手
 
 ## 参考リンク集 {-}
 
-- [SLG47910V 製品ページ](https://www.renesas.com/us/en/products/programmable-mixed-signal-asic-ip-products/forgefpga-low-density-fpgas/slg47910-1k-lut-forgefpga?partno=SLG47910V)
-- [SLG47910V データシート](https://www.renesas.com/us/en/products/programmable-mixed-signal-asic-ip-products/forgefpga-low-density-fpgas/slg47910-1k-lut-forgefpga>)
-- [ForgeFPGAコンフィグレーションガイド](https://www.renesas.com/us/en/document/mah/forgefpga-configuration-guide?r=25546631)
+- [SLG47910V 製品ページ](https://www.renesas.com/us/en/products/programmable-mixed-signal-asic-ip-products/forgefpga-low-density-fpgas/slg47910-1k-lut-forgefpga){#slg47910-product-page}
+- [SLG47910V データシート](https://www.renesas.com/us/en/document/dst/slg47910-datasheet?r=25546631){#slg47910-datasheet-download}
+- [ForgeFPGAコンフィグレーションガイド](https://www.renesas.com/us/en/document/mah/forgefpga-configuration-guide?r=25546631){#forgefpga-configuration-guide-download}
 
 - [SLG7EVBFORGE（評価ボード） 製品ページ](https://www.renesas.com/us/en/products/programmable-mixed-signal-asic-ip-products/forgefpga-low-density-fpgas/slg7evbforge-1k-lut-forgefpga-evaluation-board)
 - [SLG7EVBFORGE（評価ボード） マニュアル](https://www.renesas.com/us/en/document/mah/forgefpga-evaluation-board-r20-users-manual?r=25546646)
@@ -30,21 +30,21 @@ Mouserで購入して試すことにしました。あいにくICはまだ入手
 - [SLG7EVBFORGE（評価ボード） Mouser販売ページ](https://www.mouser.jp/ProductDetail/Renesas-Dialog/SLG7EVBFORGE?qs=2wMNvWM5ZX5HC1b2oIQaEg%3D%3D)
 - [SLG7EVBFORGE（評価ボード） DigiKey販売ページ](https://www.digikey.jp/en/products/detail/SLG7EVBFORGE/1695-SLG7EVBFORGE-ND/22972057)
 
-- [開発環境ダウンロードページ](https://www.renesas.com/us/en/software-tool/go-configure-software-hub)
-- [開発環境マニュアル](https://www.renesas.com/us/en/document/mat/go-configure-software-hub-user-guide)
-- [開発環境 Windows版](https://www.renesas.com/us/en/document/sws/go-configure-software-hub-windows-64-bit)
+- [[開発環境ダウンロードページ]{#ide-download-page}](https://www.renesas.com/us/en/software-tool/go-configure-software-hub)
+- [開発環境マニュアル](https://www.renesas.com/us/en/document/mat/go-configure-software-hub-user-guide){#ide-manual-download}
+- [開発環境 Windows版](https://www.renesas.com/us/en/document/sws/go-configure-software-hub-windows-64-bit){#ide-windows-download}
 
 \toc
 
 # ForgeFPGA SLG47910 の主な仕様
 
-以下に主な仕様一覧を示します。0.4mmピッチ24ピンQFN(3ミリ角)、この内最大19ピンをIOに使えます。電源はIOとコアで**2系統**必要です。
+[@tbl:slg47910-spec]に主な仕様一覧を示します。0.4mmピッチ24ピンQFN(3ミリ角)、この内最大19ピンをIOに使えます。電源はIOとコアで**2系統**必要です。
 また、IOレベルは低めの**2.5Vまたは1.8V系**で動作します。Arduinoやラズパイを直結するとたぶん壊れます。
 ビットストリーム（内部結線情報）のSPIフラッシュからのロード、SPIホストからの書き込み、内蔵ワンタイムROMからのロードができます。
 
 ::: {.table noheader=true}
 
-|    パッケージ    | 0.5mmピッチ24ピンQFN（EPなし）                  |
+|    パッケージ    | 0.4mmピッチ24ピンQFN（EPなし）                  |
 |:-----------:|----------------------------------------|
 | 動作電圧（VDDIO） | 1.71 - **2.75**V (LVCMOS18 / LVCMOS25) |
 | 動作電圧（VDDC）  | 1.1V &plusmn; 10%                      |
@@ -57,7 +57,7 @@ Mouserで購入して試すことにしました。あいにくICはまだ入手
 Table: SLG47910 Spec {#tbl:slg47910-spec}
 :::
 
-![内部ブロック図](images/block_diagram.png){#fig:internal-diagram width=130mm}
+![内部ブロック図(データシート抜粋)](images/block_diagram.png){#fig:internal-diagram width=100mm}
 
 ::: rmnote
 
@@ -87,85 +87,10 @@ Operating Temperature Range: -40 °C to 85 °C
 
 # 設計ソフト
 
+まず設計ソフトを入手します。参考リンク集から[ダウンロードページ](#ide-download-page)に行き、Windows版を入手します。
+
 # 評価ボード
 
 ## 購入（Mouserの場合）
 
-::: rmnote
-
-> **このファイルは何**
->
-> このファイルはPandockerがデフォルトで参照する原稿Markdownファイル`TITLE.md`のテンプレートです。
-> **素のPandocでは実現できない機能の説明を含みます。**
->
-> ------------------------
->
-> **Pandoc的Divとrmnote**
->
-> Pandocはコロン`:`3個ずつで囲まれた部分をDivとして扱います(fenced divs; <https://pandoc.org/MANUAL.html#divs-and-spans>)。
-> 任意のclassやattributeを付与することができるので、
-> フィルタのトリガやCSSで色設定をするなどの後処理に使えます。ちなみにこのDivはrmnoteクラスが付与されていて、
-> `removalnote.lua`というLuaフィルタの処理対象です。メタデータの設定によって、すべてのrmnoteクラスDivの出力を
-> 抑圧することができます。`config.yaml`を編集してください。
->
-> **GitHubその他普通のレンダラでは三連コロンを解釈してくれないので、**
-> **きれいなレンダリングを保つために前後に改行を入れておくことをおすすめします。**
->
-> ---
-
-> **TOC(目次)挿入**
->
-> `\toc`を任意の場所に書いておくと、Luaフィルタ`docx-pagebreak-toc.lua`がその場所に目次を生成します。
-> 現在のところ、Docx出力のみが対象です。目次の前は必ず改ページします。目次のあとは改ページしません。
-> `toc-title`メタデータによって目次の見出しを変更できます。`config.yaml`を編集してください。
-
-[](markdown/config.yaml){.listingtable from=18 to=20}
-
-&darr;
-
-:::
-
-::: rmnote
-
-> **Pagebreak(改ページ)挿入**
->
-> `\newpage`を任意の場所に書いておくと、Luaフィルタ`docx-pagebreak-toc.lua`が処理して改ページします。
-> Docx出力とLaTeX出力が対象です。PDF出力のときも動きますが、`--pdf-engine`の設定によってはうまく動かないかもしれません。
-
-&darr;
-
-:::
-
 \newpage
-
-::: rmnote
-
-> **番号なし見出し**
->
-> レベル1~5の`.unnumbered`クラスが付与された見出しから番号付けを外します。Docx出力が対象です。
-> 予め番号なし見出しスタイルを用意する必要があります。見出しスタイルの設定によって、
-> 見出しの前で改ページするかどうかの挙動が変わります。
-
-&darr;
-
-:::
-
-# 番号なし見出し1 {.unnumbered}
-
-## 番号なし見出し2 {.unnumbered}
-
-### 番号なし見出し3 {.unnumbered}
-
-::: rmnote
-
-> **下線**
->
-> 任意のSpanに`underline`クラスを付与すると下線がつきます。Docx出力に加えLaTeX出力(*)が対象です。
->
-> (*): LaTeX出力では`tex-underline.lua`が処理します。
->
-> 例：`**下線**`
->
-> ![QR](images/QRcode.png){#fig:qr-code width=120mm}
-
-:::
