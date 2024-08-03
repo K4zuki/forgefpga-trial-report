@@ -64,7 +64,7 @@ jobs:
         run: ls -R
       - name: Install Office
         run: choco install office365business # This takes about 5min
-#      - name: docx2pdf
-#        run: |
-#          cd artifact
-#          ./docx2pdf.ps1
+      - name: docx2pdf
+        run: |
+          cd artifact
+          ../docx2pdf.ps1
