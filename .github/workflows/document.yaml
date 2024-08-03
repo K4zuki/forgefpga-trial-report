@@ -49,6 +49,7 @@ jobs:
     runs-on: windows-latest
     #    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
 
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -68,3 +69,8 @@ jobs:
         run: |
           cd artifact
           ../docx2pdf.ps1
+      - name: Make a release (at a tag)
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            artifact/*.pdf
