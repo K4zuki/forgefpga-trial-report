@@ -53,7 +53,7 @@ jobs:
       - id: wait-for-artifact
         uses: yogeshlonkar/wait-for-jobs@v0
         with:
-          jobs: "artifact-upload"
+          jobs: "Compile document"
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v3
         with:
