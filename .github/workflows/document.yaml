@@ -51,7 +51,8 @@ jobs:
     steps:
       - name: wait for artifact
         uses: yogeshlonkar/wait-for-jobs@v0
-        with: make-document
+        with:
+          jobs: "make-document"
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v3
         with:
