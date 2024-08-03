@@ -28,7 +28,7 @@ jobs:
           DOWNLOAD_URL_BASE=$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/releases/download
           TARGET=`ls Out/*.html`
           TARGET=${TARGET#Out/}
-          qr ${DOWNLOAD_URL_BASE}/${RELEASE_VERSION}/${TARGET//.html/}.docx > images/QRcode.png
+          qr ${DOWNLOAD_URL_BASE}/${RELEASE_VERSION}/${TARGET//.html/}.pdf > images/QRcode.png
       - name: Build document
         run: |
           make docx
