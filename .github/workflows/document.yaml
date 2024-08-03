@@ -56,7 +56,7 @@ jobs:
           jobs: "Compile document"
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v3
-        with:
-          path: docs/Out/*.docx
+      - name: ls
+        run: ls
       - name: Install Office
         run: choco install office365business # This takes about 5min
