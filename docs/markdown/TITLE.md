@@ -10,6 +10,10 @@ Mouserで購入して試すことにしました。あいにくICはまだ入手
 
 データシート[^4]によると、CPUなどからビットストリームを直接流し込んだり、SPIフラッシュROMからロードさせることができるようなので、一通り調査してみたいと思います。
 
+## おことわり {-}
+
+筆者はMac版とWindows版両方の環境を使っていますが、Windows版のみについて解説します。
+
 [^1]: <https://www.renesas.com/jp/ja/about/press-room/renesas-enters-fpga-market-first-ultra-low-power-low-cost-family-addressing-low-density-high-volume>
 
 [^2]: <https://community.renesas.com/analog-products/f/greenpak-greenfet/28390/forgefpga-datasheets/108088#108088>
@@ -18,21 +22,21 @@ Mouserで購入して試すことにしました。あいにくICはまだ入手
 
 [^4]: <https://www.renesas.com/us/en/document/dst/slg47910-datasheet?r=25546631>
 
-## 参考リンク集 {-}
+## 参考リンク集 {.unnumbered #reference-links}
 
-- [SLG47910V 製品ページ](https://www.renesas.com/us/en/products/programmable-mixed-signal-asic-ip-products/forgefpga-low-density-fpgas/slg47910-1k-lut-forgefpga){#slg47910-product-page}
-- [SLG47910V データシート](https://www.renesas.com/us/en/document/dst/slg47910-datasheet?r=25546631){#slg47910-datasheet-download}
-- [ForgeFPGAコンフィグレーションガイド](https://www.renesas.com/us/en/document/mah/forgefpga-configuration-guide?r=25546631){#forgefpga-configuration-guide-download}
+- [[SLG47910V 製品ページ](#slg47910-product-page)](https://www.renesas.com/us/en/products/programmable-mixed-signal-asic-ip-products/forgefpga-low-density-fpgas/slg47910-1k-lut-forgefpga)
+- [[SLG47910V データシート](#slg47910-datasheet-download)](https://www.renesas.com/us/en/document/dst/slg47910-datasheet?r=25546631)
+- [[ForgeFPGAコンフィグレーションガイド](#forgefpga-configuration-guide-download)](https://www.renesas.com/us/en/document/mah/forgefpga-configuration-guide?r=25546631)
 
-- [SLG7EVBFORGE（評価ボード） 製品ページ](https://www.renesas.com/us/en/products/programmable-mixed-signal-asic-ip-products/forgefpga-low-density-fpgas/slg7evbforge-1k-lut-forgefpga-evaluation-board)
-- [SLG7EVBFORGE（評価ボード） マニュアル](https://www.renesas.com/us/en/document/mah/forgefpga-evaluation-board-r20-users-manual?r=25546646)
+- [[SLG7EVBFORGE（評価ボード） 製品ページ](#evalboard-product-page)](https://www.renesas.com/us/en/products/programmable-mixed-signal-asic-ip-products/forgefpga-low-density-fpgas/slg7evbforge-1k-lut-forgefpga-evaluation-board)
+- [[SLG7EVBFORGE（評価ボード） マニュアル](#evalboard-manual)](https://www.renesas.com/us/en/document/mah/forgefpga-evaluation-board-r20-users-manual?r=25546646)
 
-- [SLG7EVBFORGE（評価ボード） Mouser販売ページ](https://www.mouser.jp/ProductDetail/Renesas-Dialog/SLG7EVBFORGE?qs=2wMNvWM5ZX5HC1b2oIQaEg%3D%3D)
-- [SLG7EVBFORGE（評価ボード） DigiKey販売ページ](https://www.digikey.jp/en/products/detail/SLG7EVBFORGE/1695-SLG7EVBFORGE-ND/22972057)
+- [[SLG7EVBFORGE（評価ボード） Mouser販売ページ](#evalboard-mouser)](https://www.mouser.jp/ProductDetail/Renesas-Dialog/SLG7EVBFORGE?qs=2wMNvWM5ZX5HC1b2oIQaEg%3D%3D)
+- [[SLG7EVBFORGE（評価ボード） DigiKey販売ページ](#evalboard-digikey)](https://www.digikey.jp/en/products/detail/SLG7EVBFORGE/1695-SLG7EVBFORGE-ND/22972057)
 
 - [[開発環境ダウンロードページ]{#ide-download-page}](https://www.renesas.com/us/en/software-tool/go-configure-software-hub)
-- [開発環境マニュアル](https://www.renesas.com/us/en/document/mat/go-configure-software-hub-user-guide){#ide-manual-download}
-- [開発環境 Windows版](https://www.renesas.com/us/en/document/sws/go-configure-software-hub-windows-64-bit){#ide-windows-download}
+- [[開発環境マニュアル](#ide-manual-download)](https://www.renesas.com/us/en/document/mat/go-configure-software-hub-user-guide)
+- [[開発環境 Windows版]{#ide-windows-download}](https://www.renesas.com/us/en/document/sws/go-configure-software-hub-windows-64-bit)
 
 \toc
 
@@ -87,7 +91,12 @@ Operating Temperature Range: -40 °C to 85 °C
 
 # 設計ソフト
 
-まず設計ソフトを入手します。参考リンク集から[ダウンロードページ](#ide-download-page)に行き、Windows版を入手します。
+## ダウンロード（Windows版）
+
+まず設計ソフトを入手します。参考リンク集から[ダウンロードページ](#ide-download-page)に行き、[Windows版](#ide-windows-download)を入手します。
+ダイアログの頃とは異なり、ダウンロードには[ユーザ登録とログインが必要]{.underline}です。また、過去バージョンへのアクセスもなさそうです。そういうとこやぞ&reg;
+
+![設計ソフトダウンロードページ](images/software_download_page.png){#fig:software-download-page width=120mm}
 
 # 評価ボード
 
