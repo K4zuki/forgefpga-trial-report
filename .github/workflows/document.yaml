@@ -46,6 +46,7 @@ jobs:
 
   windows:
     runs-on: windows-latest
+    #    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
     container:
       image: k4zuki/pandocker-alpine:2.19-core
 
@@ -53,6 +54,6 @@ jobs:
       - name: Install Office
         run: choco install office365business
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
