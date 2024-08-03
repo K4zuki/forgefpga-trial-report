@@ -46,9 +46,13 @@ jobs:
 
   windows:
     runs-on: windows-latest
-    #    container:
-    #      image: k4zuki/pandocker-alpine:2.19-core
+    container:
+      image: k4zuki/pandocker-alpine:2.19-core
 
     steps:
       - name: Install Office
         run: choco install office365business
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
