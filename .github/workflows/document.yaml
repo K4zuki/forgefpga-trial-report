@@ -43,3 +43,12 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           path: docs/Out
+
+  windows:
+    runs-on: windows-latest
+    #    container:
+    #      image: k4zuki/pandocker-alpine:2.19-core
+
+    steps:
+      - name: Install Office
+        run: choco install office365business
