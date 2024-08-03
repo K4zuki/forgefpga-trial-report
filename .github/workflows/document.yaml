@@ -54,6 +54,6 @@ jobs:
       - name: Install Office
         run: choco install office365business
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
         with:
           fetch-depth: 0
