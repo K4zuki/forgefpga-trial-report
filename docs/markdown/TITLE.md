@@ -24,18 +24,18 @@ Mouserで購入して試すことにしました。あいにくICはまだ入手
 
 ## 参考リンク集 {.unnumbered #reference-links}
 
-- [[SLG47910V 製品ページ](#slg47910-product-page)](https://www.renesas.com/us/en/products/programmable-mixed-signal-asic-ip-products/forgefpga-low-density-fpgas/slg47910-1k-lut-forgefpga)
-- [[SLG47910V データシート](#slg47910-datasheet-download)](https://www.renesas.com/us/en/document/dst/slg47910-datasheet?r=25546631)
-- [[ForgeFPGAコンフィグレーションガイド](#forgefpga-configuration-guide-download)](https://www.renesas.com/us/en/document/mah/forgefpga-configuration-guide?r=25546631)
+- [[SLG47910V 製品ページ]{#slg47910-product-page}](https://www.renesas.com/us/en/products/programmable-mixed-signal-asic-ip-products/forgefpga-low-density-fpgas/slg47910-1k-lut-forgefpga)
+- [[SLG47910V データシート]{#slg47910-datasheet-download}](https://www.renesas.com/us/en/document/dst/slg47910-datasheet?r=25546631)
+- [[ForgeFPGAコンフィグレーションガイド]{#forgefpga-configuration-guide-download}](https://www.renesas.com/us/en/document/mah/forgefpga-configuration-guide?r=25546631)
 
-- [[SLG7EVBFORGE（評価ボード） 製品ページ](#evalboard-product-page)](https://www.renesas.com/us/en/products/programmable-mixed-signal-asic-ip-products/forgefpga-low-density-fpgas/slg7evbforge-1k-lut-forgefpga-evaluation-board)
-- [[SLG7EVBFORGE（評価ボード） マニュアル](#evalboard-manual)](https://www.renesas.com/us/en/document/mah/forgefpga-evaluation-board-r20-users-manual?r=25546646)
+- [[SLG7EVBFORGE（評価ボード） 製品ページ]{#evalboard-product-page}](https://www.renesas.com/us/en/products/programmable-mixed-signal-asic-ip-products/forgefpga-low-density-fpgas/slg7evbforge-1k-lut-forgefpga-evaluation-board)
+- [[SLG7EVBFORGE（評価ボード） マニュアル]{#evalboard-manual}](https://www.renesas.com/us/en/document/mah/forgefpga-evaluation-board-r20-users-manual?r=25546646)
 
-- [[SLG7EVBFORGE（評価ボード） Mouser販売ページ](#evalboard-mouser)](https://www.mouser.jp/ProductDetail/Renesas-Dialog/SLG7EVBFORGE?qs=2wMNvWM5ZX5HC1b2oIQaEg%3D%3D)
-- [[SLG7EVBFORGE（評価ボード） DigiKey販売ページ](#evalboard-digikey)](https://www.digikey.jp/en/products/detail/SLG7EVBFORGE/1695-SLG7EVBFORGE-ND/22972057)
+- [[SLG7EVBFORGE（評価ボード） Mouser販売ページ]{#evalboard-mouser}](https://www.mouser.jp/ProductDetail/Renesas-Dialog/SLG7EVBFORGE?qs=2wMNvWM5ZX5HC1b2oIQaEg%3D%3D)
+- [[SLG7EVBFORGE（評価ボード） DigiKey販売ページ]{#evalboard-digikey}](https://www.digikey.jp/en/products/detail/SLG7EVBFORGE/1695-SLG7EVBFORGE-ND/22972057)
 
 - [[開発環境ダウンロードページ]{#ide-download-page}](https://www.renesas.com/us/en/software-tool/go-configure-software-hub)
-- [[開発環境マニュアル](#ide-manual-download)](https://www.renesas.com/us/en/document/mat/go-configure-software-hub-user-guide)
+- [[開発環境マニュアル]{#ide-manual-download}](https://www.renesas.com/us/en/document/mat/go-configure-software-hub-user-guide)
 - [[開発環境 Windows版]{#ide-windows-download}](https://www.renesas.com/us/en/document/sws/go-configure-software-hub-windows-64-bit)
 
 \toc
@@ -54,14 +54,18 @@ Mouserで購入して試すことにしました。あいにくICはまだ入手
 | 動作電圧（VDDC）  | 1.1V &plusmn; 10%                      |
 |  ５ビットLUT数   | 1120                                   |
 |    DFF数     | 1120                                   |
-|   動作温度範囲    | -40 - 85 &deg;C                        |
+|   動作温度範囲    | -40 - 85 &#8451;                       |
 |  内蔵クロック周波数  | 50MHz                                  |
 |   最大GPIO数   | 19                                     |
 
 Table: SLG47910 Spec {#tbl:slg47910-spec}
 :::
 
-![内部ブロック図(データシート抜粋)](images/block_diagram.png){#fig:internal-diagram width=100mm}
+![内部ブロック図(データシート抜粋)](images/block_diagram.png){#fig:internal-diagram width=150mm}
+
+# VGAランダム出力プロジェクトを作ってみる
+
+[main.v](../vga_random/ffpga/src/main.v){.listingtable type=verilog numbers=true}
 
 ::: rmnote
 
@@ -96,10 +100,21 @@ Operating Temperature Range: -40 °C to 85 °C
 まず設計ソフトを入手します。参考リンク集から[ダウンロードページ](#ide-download-page)に行き、[Windows版](#ide-windows-download)を入手します。
 ダイアログの頃とは異なり、ダウンロードには[ユーザ登録とログインが必要]{.underline}です。また、過去バージョンへのアクセスもなさそうです。そういうとこやぞ&reg;
 
-![設計ソフトダウンロードページ](images/software_download_page.png){#fig:software-download-page width=120mm}
+![設計ソフトダウンロードページ](images/software_download_page.png){#fig:software-download-page width=150mm}
 
 # 評価ボード
 
+評価ボードとサンプルチップを入手して実動作を見てみました。
+
 ## 購入（Mouserの場合）
+
+ルネサスの直販を利用してもよさそうですが、サンプル請求と同様のフィルタを掛けられても困るので、筆者はMouserから購入しました。商品ページには[リンク集](#evalboard-mouser)から飛べます。
+
+### ICの単体購入はできない
+
+SLG47910のチップ単体購入はまだできず、サンプル請求しかできません（将来的に直販が開放されるかどうかも不明）。
+ルネのポリシーとしては、Gmailなどのメールアドレスで登録されたユーザからのサンプル請求を拒否するようです。そういうとこやぞ&reg;
+
+### 配送業者はUPSを選択
 
 \newpage
