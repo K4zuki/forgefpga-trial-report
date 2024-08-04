@@ -27,13 +27,13 @@ jobs:
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
         run: |
           pip3 install qrcode
-          make initdir html
+          make clean html
           TARGET=`ls ${{env.DOC_BASE}}/Out/*.html`
           TARGET=${TARGET#${{env.DOC_BASE}}/Out}
           qr ${{env.DOWNLOAD_URL_BASE}}/${TARGET//.html/}.pdf > ${{env.DOC_BASE}}/images/QRcode.png
       - name: Build document
         run: |
-          make initdir html docx
+          make clean html docx
       - name: Upload artifact files (at a push)
         uses: actions/upload-artifact@v3
         with:
