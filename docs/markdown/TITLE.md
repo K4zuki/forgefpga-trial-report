@@ -38,6 +38,9 @@ Mouserで購入して試すことにしました。あいにくICはまだ入手
 - [[開発環境マニュアル]{#ide-manual-download}](https://www.renesas.com/us/en/document/mat/go-configure-software-hub-user-guide)
 - [[開発環境 Windows版]{#ide-windows-download}](https://www.renesas.com/us/en/document/sws/go-configure-software-hub-windows-64-bit)
 
+- [[線形帰還シフトレジスタ LFSRのまとめ、FPGAの Verilog HDLでの実装例]{#lfsr-verilog-ref}](http://www.neko.ne.jp/~freewing/fpga/lfsr_verilog/)
+- [[FPGAでVGA出力 - モノ創りで国造りを]{#vga-verilog-ref}](https://yuji2yuji.hatenablog.com/entry/2019/08/21/144446)
+
 \toc
 
 # ForgeFPGA SLG47910 の主な仕様
@@ -62,10 +65,6 @@ Table: SLG47910 Spec {#tbl:slg47910-spec}
 :::
 
 ![内部ブロック図(データシート抜粋)](images/block_diagram.png){#fig:internal-diagram width=150mm}
-
-# VGAランダム出力プロジェクトを作ってみる
-
-[main.v](../vga_random/ffpga/src/main.v){.listingtable type=verilog numbers=true}
 
 ::: rmnote
 
@@ -108,13 +107,19 @@ Operating Temperature Range: -40 °C to 85 °C
 
 ## 購入（Mouserの場合）
 
-ルネサスの直販を利用してもよさそうですが、サンプル請求と同様のフィルタを掛けられても困るので、筆者はMouserから購入しました。商品ページには[リンク集](#evalboard-mouser)から飛べます。
+筆者はMouserから評価ボードを購入しました。商品ページには[リンク集](#evalboard-mouser)から飛べます。
 
-### ICの単体購入はできない
+![SLG7EVBFORGE（評価ボード） Mouser販売ページ](images/evalboard-mouser-page.png){#fig:screenshot-mouser-page width=150mm}
 
-SLG47910のチップ単体購入はまだできず、サンプル請求しかできません（将来的に直販が開放されるかどうかも不明）。
+### ICの単体購入はできな...くはない（買えるとは言っていない）
+
+SLG47910チップ単体の直販購入はまだできず、サンプル請求しかありません（将来的に直販が開放されるかどうかも不明）。
 ルネのポリシーとしては、Gmailなどのメールアドレスで登録されたユーザからのサンプル請求を拒否するようです。そういうとこやぞ&reg;
 
-### 配送業者はUPSを選択
+### 配送業者はUPSを選択...何故か名古屋に飛ばされる
 
 \newpage
+
+# VGAランダム出力プロジェクトを作ってみる
+
+[main.v](../vga_random/ffpga/src/main.v){.listingtable type=verilog numbers=true}
