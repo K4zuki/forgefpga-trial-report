@@ -49,6 +49,9 @@ Mouserで購入して試すことにしました。あいにくICはまだ入手
 また、IOレベルは低めの**2.5Vまたは1.8V系**で動作します。Arduinoやラズパイを直結するとたぶん壊れます。
 ビットストリーム（内部結線情報）のSPIフラッシュからのロード、SPIホストからの書き込み、内蔵ワンタイムROMからのロードができます。
 
+- ピン配置DS
+- SPIと共有
+
 ::: {.table noheader=true}
 
 |    パッケージ    | 0.4mmピッチ24ピンQFN（EPなし）                  |
@@ -103,7 +106,7 @@ Operating Temperature Range: -40 °C to 85 °C
 
 # 評価ボード
 
-評価ボードとサンプルチップを入手して実動作を見てみました。
+評価ボードを入手して実動作を見てみました。
 
 ## 購入（Mouserの場合）
 
@@ -111,15 +114,25 @@ Operating Temperature Range: -40 °C to 85 °C
 
 ![SLG7EVBFORGE（評価ボード） Mouser販売ページ](images/evalboard-mouser-page.png){#fig:screenshot-mouser-page width=150mm}
 
+\newpage
+
 ### ICの単体購入はできな...くはない（買えるとは言っていない）
 
 SLG47910チップ単体の直販購入はまだできず、サンプル請求しかありません（将来的に直販が開放されるかどうかも不明）。
 ルネのポリシーとしては、Gmailなどのメールアドレスで登録されたユーザからのサンプル請求を拒否するようです。そういうとこやぞ&reg;
 
-### 配送業者はUPSを選択...何故か名古屋に飛ばされる
+ルネの製品ページからAVNETの商品ページに飛べますが、[フルリール5000個]{.underline}でしか購入できません。なお、執筆時点(2024年8月)では在庫がありません。
+
+![ルネサス製品ページ（直販メニュー）](images/buy-from-avnet.png){#fig:buy-from-avnet width=130mm}
+
+![AVNET商品ページ（在庫なし）](images/buy-from-avnet-2.png){#fig:buy-from-avnet-2 width=130mm}
 
 \newpage
+
+### 配送業者はUPSを選択...何故か名古屋に飛ばされる
 
 # VGAランダム出力プロジェクトを作ってみる
 
 [main.v](../vga_random/ffpga/src/main.v){.listingtable type=verilog numbers=true}
+
+# あとがき {.unnumbered}
