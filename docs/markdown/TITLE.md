@@ -45,49 +45,14 @@ Mouserで購入して試すことにしました。あいにくICはまだ入手
 
 # ForgeFPGA SLG47910 の主な仕様
 
-[@tbl:slg47910-spec]に主な仕様一覧を示します。0.4mmピッチ24ピンQFN(3ミリ角)、この内最大19ピンをIOに使えます。電源はIOとコアで**2系統**必要です。
+[@tbl:slg47910-spec]に主な仕様一覧を示します。0.4mmピッチ24ピンSTQFN(3ミリ角)、この内最大19ピンをIOに使えます。電源はIOとコアで**2系統**必要です。
 また、IOレベルは低めの**2.5Vまたは1.8V系**で動作します。Arduinoやラズパイを直結するとたぶん壊れます。
 ビットストリーム（内部結線情報）のSPIフラッシュからのロード、SPIホストからの書き込み、内蔵ワンタイムROMからのロードができます。SPIは専用ではなく、GPIOと共有です。当然ですがフラッシュも1.8V動作品が必要です。
 筆者は秋月で売っているもの^[<https://akizukidenshi.com/catalog/g/g118046/>]を入手済ですが、ROMライターの類を持っていないので、まだ実験には至っていません。
 
-## パッケージとピン配置
-
-image
-
-## 電圧仕様
-
-image
-
-### コア電圧
-
-### IO電圧
-
-## リセットとメモリ保持
-
-image
-
-## GPIO機能一覧（SPIを除く）
-
-image
-
-## GPIO機能一覧（SPI）
-
-image
-
-### SPIロード（マスタ）
-
-### SPIロード（スレーブ）
-
-::: rmnote
-
-- ピン配置DS
-- SPIと共有
-
-:::
-
 ::: {.table noheader=true}
 
-|    パッケージ    | 0.4mmピッチ24ピンQFN（EPなし）                  |
+|    パッケージ    | 0.4mmピッチ24ピンSTQFN（EPなし）                |
 |:-----------:|----------------------------------------|
 | 動作電圧（VDDIO） | 1.71 - **2.75**V (LVCMOS18 / LVCMOS25) |
 | 動作電圧（VDDC）  | 1.1V &plusmn; 10%                      |
@@ -99,6 +64,45 @@ image
 |  最大GPIO周波数  | 300MHz                                 |
 
 Table: SLG47910 Spec {#tbl:slg47910-spec}
+:::
+
+\newpage
+
+## パッケージとピン配置
+
+![ピン配置図（データシート抜粋）](images/slg47910v-pinout-descriptions.png){#fig:pinout-description width=150mm}
+
+## 電圧仕様
+
+![推奨動作条件（データシート抜粋）](images/slg47910v-recommended-operation-range.png){#fig:recommended-operation-range width=150mm}
+
+### コア電圧
+
+### IO電圧
+
+![IO電圧（データシート抜粋）](images/slg47910v-supported-io-levels.png){#fig:supported-iko-levels width=150mm}
+
+## リセットとメモリ保持
+
+![ピン配置図（データシート抜粋）](images/slg47910v-reset-retention-table.png){#fig:reset-retention-truth-table width=150mm}
+
+## GPIO機能一覧（SPIを除く）
+
+![GPIO機能一覧（SPIを除く）（データシート抜粋）](images/slg47910v-gpio-nonspi-functions.png){#fig:gpio-nonspi-functions width=150mm}
+
+## GPIO機能一覧（SPI）
+
+![GPIO機能一覧（SPI）（データシート抜粋）](images/slg47910v-gpio-spi-functions.png){#fig:gpio-spi-functions width=150mm}
+
+### SPIロード（マスタ）
+
+### SPIロード（スレーブ）
+
+::: rmnote
+
+- ピン配置DS
+- SPIと共有
+
 :::
 
 ![内部ブロック図(データシート抜粋)](images/block_diagram.png){#fig:internal-diagram width=150mm}
