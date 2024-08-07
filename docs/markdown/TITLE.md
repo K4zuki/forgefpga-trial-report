@@ -66,6 +66,8 @@ Mouserで購入して試すことにしました。あいにくICはまだ入手
 Table: SLG47910 Spec {#tbl:slg47910-spec}
 :::
 
+![内部ブロック図(データシート抜粋)](images/block_diagram.png){#fig:internal-diagram width=150mm}
+
 \newpage
 
 ## パッケージとピン配置
@@ -94,7 +96,7 @@ Table: SLG47910 Spec {#tbl:slg47910-spec}
 
 ![GPIO機能一覧（SPI）（データシート抜粋）](images/slg47910v-gpio-spi-functions.png){#fig:gpio-spi-functions width=150mm}
 
-### SPIロード（マスタ）
+### SPIロード（マスター）
 
 ### SPIロード（スレーブ）
 
@@ -102,12 +104,6 @@ Table: SLG47910 Spec {#tbl:slg47910-spec}
 
 - ピン配置DS
 - SPIと共有
-
-:::
-
-![内部ブロック図(データシート抜粋)](images/block_diagram.png){#fig:internal-diagram width=150mm}
-
-::: rmnote
 
 Package:
 QFN-24
