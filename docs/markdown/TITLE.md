@@ -50,6 +50,8 @@ Mouserで購入して試すことにしました。あいにくICはまだ入手
 ビットストリーム（内部結線情報）のSPIフラッシュからのロード、SPIホストからの書き込み、内蔵ワンタイムROMからのロードができます。SPIは専用ではなく、GPIOと共有です。当然ですがフラッシュも1.8V動作品が必要です。
 筆者は秋月で売っているもの^[<https://akizukidenshi.com/catalog/g/g118046/>]を入手済ですが、ROMライターの類を持っていないので、まだ実験には至っていません。
 
+以降の各節にデータシート抜粋写真を置いておきます。パッケージ図面がガビってますがデータシートのままです。
+
 ::: {.table noheader=true}
 
 |    パッケージ    | 0.4mmピッチ24ピンSTQFN（EPなし）                |
@@ -73,6 +75,8 @@ Table: SLG47910 Spec {#tbl:slg47910-spec}
 ## パッケージとピン配置
 
 ![ピン配置図（データシート抜粋）](images/slg47910v-pinout-descriptions.png){#fig:pinout-description width=150mm}
+
+![パッケージ図面（データシート抜粋）](slg47910-package-dimension.png){#fig:package-dimention width=150mm}
 
 ## 電圧仕様
 
