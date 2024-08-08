@@ -50,7 +50,7 @@ Mouserで購入して試すことにしました。あいにくICはまだ入手
 ビットストリーム（内部結線情報）のSPIフラッシュからのロード、SPIホストからの書き込み、内蔵ワンタイムROMからのロードができます。SPIは専用ではなく、GPIOと共有です。当然ですがフラッシュも1.8V動作品が必要です。
 筆者は秋月で売っているもの^[<https://akizukidenshi.com/catalog/g/g118046/>]を入手済ですが、ROMライターの類を持っていないので、まだ実験には至っていません。
 
-以降の各節にデータシート抜粋写真を置いておきます。パッケージ外観はiPhoneのマクロ機能で撮ったあと加工しているのでガビってます。
+以降の各節にデータシート抜粋写真を置いておきます。パッケージ外観どアップ写真（[@fig:package-closeup]）はiPhoneのマクロ機能で撮ったあと加工しているのでガビってます。
 
 ::: {.table noheader=true}
 
@@ -74,9 +74,9 @@ Table: SLG47910 Spec {#tbl:slg47910-spec}
 
 ![ピン配置図（データシート抜粋）](images/slg47910v-pinout-descriptions.png){#fig:pinout-description width=150mm}
 
-![パッケージ図面（データシート抜粋）](images/slg47910-package-dimension.png){#fig:package-dimension width=150mm}
+![パッケージ図面（データシート抜粋）](images/slg47910v-package-dimension.png){#fig:package-dimension width=150mm}
 
-![パッケージ外観](images/slg47910-closeup.png){#fig:package-closeup width=100mm}
+![パッケージ外観（どアップ）](images/slg47910v-package-closeup.png){#fig:package-closeup width=100mm}
 
 ## 電圧仕様
 
