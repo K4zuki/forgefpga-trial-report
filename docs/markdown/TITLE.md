@@ -74,15 +74,13 @@ Table: SLG47910 Spec {#tbl:slg47910-spec}
 
 ![ピン配置図（データシート抜粋）](images/slg47910v-pinout-descriptions.png){#fig:pinout-description width=150mm}
 
-![パッケージ図面（データシート抜粋）](images/slg47910v-package-dimension.png){#fig:package-dimension width=150mm}
+![パッケージ図面（データシート抜粋）^[ボトムビューの1番ピンの位置がトップビューとあってなくて気持ち悪いなっておもいます]](images/slg47910v-package-dimension.png){#fig:package-dimension width=150mm}
 
 ![パッケージ外観（どアップ）](images/slg47910v-package-closeup.png){#fig:package-closeup width=100mm}
 
 ## 電圧仕様
 
 ![推奨動作条件（データシート抜粋）](images/slg47910v-recommended-operation-range.png){#fig:recommended-operation-range width=150mm}
-
-### IO電圧
 
 ![IO電圧（データシート抜粋）](images/slg47910v-supported-io-levels.png){#fig:supported-iko-levels width=150mm}
 
@@ -98,38 +96,10 @@ Table: SLG47910 Spec {#tbl:slg47910-spec}
 
 ![GPIO機能一覧（SPI）（データシート抜粋）](images/slg47910v-gpio-spi-functions.png){#fig:gpio-spi-functions width=150mm}
 
-### SPIロード（マスター）
+SPI兼用ピンはGPIO3～6の4本です。`SPI_SS`と`PWR`/`EN`の設定によって、外部SPIメモリからロードするマスタモードと、外部マイコン
+などが書き込むスレーブモードがあります。MISO・MOSIの割り当てピンが変わるので注意が必要です。
 
-### SPIロード（スレーブ）
-
-::: rmnote
-
-- ピン配置DS
-- SPIと共有
-
-Package:
-QFN-24
-
-Description:
-The SLG47910 provides a small, low power component for common FPGA applications. The user creates their circuit design by programming the One Time Programmable (OTP) Non-Volatile Memory (NVM) to configure the interconnect logic, the IO pins, and the macrocells of the SLG47910. This highly versatile device allows a wide variety of FPGA applications to be designed within a very small, low power integrated circuit. The macrocells in the device include the following:
-Dense Array of Configurable Logic:
-1120 5-bit LUTs;
-1120 DFFs;
-5 kb distributed memory;
-32 kb BRAM;
-Configurable through NVM and/or SPI interface;
-50 MHz On-Chip Oscillator:
-Phase-locked Loop (PLL):
-Input from external source or internal On-Chip Oscillator;
-Power Supply:
-VDDIO: 1.71 V to 2.75 V;
-VDDCore: 1.1 V ± 10%;
-Power-On-Reset (POR);
-GPIO Count
-19 GPIOs
-Operating Temperature Range: -40 °C to 85 °C
-
-:::
+モード設定の方法は[ForgeFPGAコンフィグレーションガイド](#forgefpga-configuration-guide-download)を参照してください。
 
 # 設計ソフト
 
