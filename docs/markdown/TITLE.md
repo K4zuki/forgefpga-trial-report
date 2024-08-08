@@ -88,13 +88,13 @@ Table: SLG47910 Spec {#tbl:slg47910-spec}
 
 ![ピン配置図（データシート抜粋）](images/slg47910v-reset-retention-table.png){#fig:reset-retention-truth-table width=150mm}
 
-## GPIO機能一覧（SPIを除く）
+## GPIO機能一覧（SPIロード兼用ピンを除く）
 
-![GPIO機能一覧（SPIを除く）（データシート抜粋）](images/slg47910v-gpio-nonspi-functions.png){#fig:gpio-nonspi-functions width=150mm}
+![GPIO機能一覧（SPIロード兼用ピンを除く）（データシート抜粋）](images/slg47910v-gpio-nonspi-functions.png){#fig:gpio-nonspi-functions width=150mm}
 
-## GPIO機能一覧（SPI）
+## GPIO機能一覧（SPIロード兼用ピン）
 
-![GPIO機能一覧（SPI）（データシート抜粋）](images/slg47910v-gpio-spi-functions.png){#fig:gpio-spi-functions width=150mm}
+![GPIO機能一覧（SPIロード兼用ピン）（データシート抜粋）](images/slg47910v-gpio-spi-functions.png){#fig:gpio-spi-functions width=150mm}
 
 SPI兼用ピンはGPIO3～6の4本です。`SPI_SS`と`PWR`/`EN`の設定によって、外部SPIメモリからロードするマスタモードと、外部マイコン
 などが書き込むスレーブモードがあります。MISO・MOSIの割り当てピンが変わるので注意が必要です。
@@ -112,7 +112,7 @@ SPI兼用ピンはGPIO3～6の4本です。`SPI_SS`と`PWR`/`EN`の設定によ�
 
 ::: rmnote
 
-- HEX出力が行方不明
+- ビットストリームのHEX出力ができない
 
 :::
 
@@ -120,25 +120,25 @@ SPI兼用ピンはGPIO3～6の4本です。`SPI_SS`と`PWR`/`EN`の設定によ�
 
 評価ボードを入手して実動作を見てみました。
 
-![[評価ボード製品ページ](#slg47910-product-page)](images/eval_board_page.png){#fig:eval-board-page width=150mm}
+![[評価ボード製品ページ](#evalboard-product-page)](images/eval_board_page.png){#fig:eval-board-page width=120mm}
 
 ## 購入（Mouserの場合）
 
 筆者はMouserから評価ボードを購入しました。商品ページには[リンク集](#evalboard-mouser)から飛べます。
 
-![SLG7EVBFORGE（評価ボード） Mouser販売ページ](images/evalboard-mouser-page.png){#fig:screenshot-mouser-page width=150mm}
+![SLG7EVBFORGE（評価ボード） Mouser販売ページ](images/evalboard-mouser-page.png){#fig:screenshot-mouser-page width=120mm}
 
-到着時はルネの箱にも入っておらず、本体基板、USBA-Cケーブル、サンプルチップがそれぞれESD袋に入ってホチキスで止められてきました。
+ルネにしては梱包がかなりシンプルで、化粧箱のたぐいはなく、本体基板・USBA-Cケーブル・サンプルチップがそれぞれESD袋に入ってホチキスで止められてきました。
 
-#### 配送業者はUPSを選択...何故か*名古屋*に飛ばされる
+##### 配送業者はUPSを選択...何故か*名古屋*に飛ばされる
 
 筆者は配送業者をUPSに指定（Mouserのデフォルト・関税無料）しました。その後順調に成田のUPS施設に来て、「地元の業者」ことヤマト運輸に委託されたのですが、
-そこで何らかの手違いが起きたらしく、何故か名古屋に飛ばされました。サポートセンターに若干たらい回しされました（転送料払えとか言われた。なんでやねん）が、1日遅れで届きましたとさ。
+そこで何らかの手違いが起きたらしく、何故か名古屋に飛ばされました。サポートセンターに若干たらい回しされました（転送料払えとか言われた（なんでやねん））が、1日遅れで届きましたとさ。
 東京と名古屋で住所がかぶる地域があったというのが原因だそうです。そうはならんやろ案件でした。
 
 ## 外観（加工済）
 
-ポスカペイントなどで手が入っていますが、[@fig:evalkit-overview.png]にボードの外観を示します。
+[@fig:evalkit-overview.png]にボードの外観を示します。ピンヘッダや基板表面に色がついているのは筆者による加工です。
 
 ![評価ボード外観](evalkit-overview.png){#fig:evalkit-overview.png height=150mm}
 
