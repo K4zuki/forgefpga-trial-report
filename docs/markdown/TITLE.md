@@ -50,7 +50,7 @@ Mouserで購入して試すことにしました。あいにくICはまだ入手
 ビットストリーム（内部結線情報）のSPIフラッシュからのロード、SPIホストからの書き込み、内蔵ワンタイムROMからのロードができます。SPIは専用ではなく、GPIOと共有です。当然ですがフラッシュも1.8V動作品が必要です。
 筆者は秋月で売っているもの^[<https://akizukidenshi.com/catalog/g/g118046/>]を入手済ですが、ROMライターの類を持っていないので、まだ実験には至っていません。
 
-以降の各節にデータシート抜粋写真を置いておきます。パッケージ図面がガビってますがデータシートのままです。
+以降の各節にデータシート抜粋写真を置いておきます。パッケージ外観はiPhoneのマクロ機能で撮ったあと加工しているのでガビってます。
 
 ::: {.table noheader=true}
 
@@ -68,21 +68,19 @@ Mouserで購入して試すことにしました。あいにくICはまだ入手
 Table: SLG47910 Spec {#tbl:slg47910-spec}
 :::
 
-![内部ブロック図(データシート抜粋)](images/block_diagram.png){#fig:internal-diagram width=150mm}
-
-\newpage
+![内部ブロック図(データシート抜粋)](images/block_diagram.png){#fig:internal-diagram width=110mm}
 
 ## パッケージとピン配置
 
 ![ピン配置図（データシート抜粋）](images/slg47910v-pinout-descriptions.png){#fig:pinout-description width=150mm}
 
-![パッケージ図面（データシート抜粋）](slg47910-package-dimension.png){#fig:package-dimention width=150mm}
+![パッケージ図面（データシート抜粋）](images/slg47910-package-dimension.png){#fig:package-dimension width=150mm}
+
+![パッケージ外観](images/slg47910-closeup.png){#fig:package-closeup width=100mm}
 
 ## 電圧仕様
 
 ![推奨動作条件（データシート抜粋）](images/slg47910v-recommended-operation-range.png){#fig:recommended-operation-range width=150mm}
-
-### コア電圧
 
 ### IO電圧
 
@@ -158,6 +156,14 @@ Operating Temperature Range: -40 °C to 85 °C
 
 ![SLG7EVBFORGE（評価ボード） Mouser販売ページ](images/evalboard-mouser-page.png){#fig:screenshot-mouser-page width=150mm}
 
+到着時はルネの箱にも入っておらず、本体基板、USBA-Cケーブル、サンプルチップがそれぞれESD袋に入ってホチキスで止められてきました。
+
+#### 配送業者はUPSを選択...何故か*名古屋*に飛ばされる
+
+筆者は配送業者をUPSに指定（Mouserのデフォルト・関税無料）しました。その後順調に成田のUPS施設に来て、「地元の業者」ことヤマト運輸に委託されたのですが、
+そこで何らかの手違いが起きたらしく、何故か名古屋に飛ばされました。若干たらい回しされました（転送料払えとか言われた。なんでやねん）が、1日遅れで届きましたとさ。
+東京と名古屋で住所がかぶる地域があったというのが原因だそうです。そうはならんやろ案件でした。
+
 \newpage
 
 ### ICの単体購入はできな...くはない（買えるとは言っていない）
@@ -172,8 +178,6 @@ SLG47910チップ単体の直販購入はまだできず、サンプル請求し
 ![AVNET商品ページ（在庫なし）](images/buy-from-avnet-2.png){#fig:buy-from-avnet-2 width=130mm}
 
 \newpage
-
-### 配送業者はUPSを選択...何故か名古屋に飛ばされる
 
 # VGAランダム出力プロジェクトを作ってみる
 
