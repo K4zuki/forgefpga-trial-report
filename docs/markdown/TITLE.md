@@ -128,11 +128,21 @@ GPAKインターフェースはIDEの起動、IOピンのドライブ能力や�
 
 ![設計ソフトダウンロードページ](images/software_download_page.png){#fig:software-download-page width=150mm}
 
-## GreenPAKデザイナーインターフェース
+ソフトの使い方については、まずはマニュアルを読んでみることをおすすめします。[リンク集](#ide-manual-download)からダウンロードできます。
+
+\newpage
+
+## GreenPAKデザイナーウィンドウ
+
+GreenPAKの開発で見覚えがあるインターフェースです。デバッガ（評価基板）の選択、デバイスOTPへの書き込み、
+ビットストリームの流し込みと実機でバッグができます。
 
 ![IDEメインウィンドウ](images/software-gpak-window.png){#fig:software-gpak-window width=150mm}
 
-![IOピンコンフィグ](images/software-pin-config.png){#fig:software-pin-config width=100mm}
+![IOピンコンフィグ](images/software-pin-config.png){#fig:software-pin-config height=100mm}
+
+ところで、ドキュメントやソフトのメニューの内容（たとえば[@fig:software-debugger-select]）
+などからロジアナを搭載した大規模開発キットがあるように推察できますが、ルネのサイトには見当たらないんですよね。たぶん**幻**なんだと思います。
 
 ![IDEデバッガ選択](images/software-debugger-select.png){#fig:software-debugger-select width=150mm}
 
@@ -163,7 +173,7 @@ HDLのコンパイルには*icarus verilog*を使っているようです。ル�
 
 # 評価ボード
 
-評価ボードを入手して実動作を見てみました。
+サンプルICつき評価ボードを入手して実物を見てみました。
 
 ![[評価ボード製品ページ](#evalboard-product-page)](images/eval_board_page.png){#fig:eval-board-page width=120mm}
 
@@ -174,6 +184,7 @@ HDLのコンパイルには*icarus verilog*を使っているようです。ル�
 ![SLG7EVBFORGE（評価ボード） Mouser販売ページ](images/evalboard-mouser-page.png){#fig:screenshot-mouser-page width=120mm}
 
 ルネにしては梱包がかなりシンプルで、化粧箱のたぐいはなく、本体基板・USBA-Cケーブル・サンプルチップがそれぞれESD袋に入ってホチキスで止められてきました。
+サンプルチップはたったの10個をわざわざジェルケースに入れ替えてます。なぜ素直にカセットテープにしないんだ&reg;
 
 ##### 配送業者はUPSを選択...何故か*名古屋*に飛ばされる
 
