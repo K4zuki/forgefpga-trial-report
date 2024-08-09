@@ -137,7 +137,7 @@ GPAKインターフェースはIDEの起動、IOピンのドライブ能力や�
 GreenPAKの開発で見覚えがあるインターフェースです。デバッガ（評価基板）の選択、デバイスOTPへの書き込み、
 ビットストリームの流し込みと実機でバッグができます。
 
-![IDEメインウィンドウ](images/software-gpak-window.png){#fig:software-gpak-window width=150mm}
+![GreenPAKデザイナーウィンドウ](images/software-gpak-window.png){#fig:software-gpak-window width=150mm}
 
 ![IOピンコンフィグ](images/software-pin-config.png){#fig:software-pin-config height=100mm}
 
@@ -157,7 +157,7 @@ GreenPAKの開発で見覚えがあるインターフェースです。デバッ
 
 ## IDEウィンドウ
 
-![software-ide-window.png](images/software-ide-window.png){#fig:software-ide-window width=150mm}
+![IDEウィンドウ](images/software-ide-window.png){#fig:software-ide-window width=150mm}
 
 ### HDLのコンパイル（Synthesis）
 
@@ -256,8 +256,10 @@ SLG47910チップ単体の直販購入はまだできず、サンプル請求し
 
 :::
 
-# あとがき {.unnumbered}
+# あとがき^[＃このあとがきは、今にも落ちそうなのをぎりぎり踏みとどまっている土曜日に書かれました。] {.unnumbered}
 
-＃このあとがきは、今にも落ちそうなのをぎりぎり踏みとどまっている木曜日に書かれました。
+- 本当は何か回路を組んでオシロで波形をとるとかしたかったんですが、時間切れです。
+- 台風がコミケ直撃と予報が出てる。こっち来んな
+- タルコフPvEはいいぞ。あくまでPvPに比べてだけどね
 
 ![原稿はこちらから](images/QRcode.png){width=80mm}
