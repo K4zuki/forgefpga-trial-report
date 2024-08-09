@@ -84,7 +84,9 @@ Table: SLG47910 Spec {#tbl:slg47910-spec}
 
 ![パッケージ図面（データシート抜粋）^[ボトムビューの1番ピンの位置がトップビューとあってなくて気持ち悪いなっておもいます]](images/slg47910v-package-dimension.png){#fig:package-dimension width=150mm}
 
-![パッケージ外観（どアップ）](images/slg47910v-package-closeup.png){#fig:package-closeup width=100mm}
+![パッケージ外観（トップビュー）](images/slg47910v-package-closeup.png){#fig:package-closeup height=90mm}
+
+![パッケージ外観（ボトムビュー）](images/slg47910v-package-closeup-bottom.png){#fig:package-closeup-bottom height=90mm}
 
 ## 電圧仕様
 
