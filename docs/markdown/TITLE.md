@@ -107,7 +107,7 @@ Table: SLG47910 Spec {#tbl:slg47910-spec}
 SPI兼用ピンはGPIO3～6の4本です。`SPI_SS`と`PWR`/`EN`の設定によって、外部SPIメモリからロードするマスタモードと、外部マイコン
 などが書き込むスレーブモードがあります。MISO・MOSIの割り当てピンが変わるので注意が必要です。
 
-モード設定の方法は[ForgeFPGAコンフィグレーションガイド](#forgefpga-configuration-guide-download)を参照してください。
+モード設定とロードの手順は[ForgeFPGAコンフィグレーションガイド](#forgefpga-configuration-guide-download)を参照してください。
 
 # 設計ソフト
 
