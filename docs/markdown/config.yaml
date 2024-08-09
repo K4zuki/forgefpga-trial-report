@@ -5,7 +5,7 @@ circle: KY技研
 author: K4zuki
 comiket: C104 2日目 西2ホール さ-34b
 year: 2024
-publisher: 印刷会社で印刷製本
+publisher: キンコーズオンラインで印刷製本
 docrevision: "1.0"
 # front: images/front-image.png
 #frontoption:
@@ -93,4 +93,5 @@ docx_coreprop:
       - "K4zuki / KY技研"
       - "C104 2日目 西2ホール さ-34b / 2024"
       - "Markdown x Pandoc Version 2.19 (Docx writer)"
+      - "キンコーズオンラインで印刷製本"
 ...
