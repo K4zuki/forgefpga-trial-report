@@ -146,6 +146,15 @@ GreenPAKの開発で見覚えがあるインターフェースです。デバッ
 
 ![IDEデバッガ選択](images/software-debugger-select.png){#fig:software-debugger-select width=150mm}
 
+### 実機デバッグ
+
+これもまたGPAKと同じI/FのデバッグペインからEmulationを押すと、回路情報がターゲットICにロードされます。
+このロードには10秒くらいかかります。
+
+![デバッグペイン](images/software-debug-pane.png){#fig:software-debug-pane width=120mm}
+
+また、VDDとVDDIOの電圧選択メニューもあります。最大2.7Vまで設定できることになってますがちょっと低めに出力されるっぽいです。
+
 ## IDEウィンドウ
 
 ![software-ide-window.png](images/software-ide-window.png){#fig:software-ide-window width=150mm}
