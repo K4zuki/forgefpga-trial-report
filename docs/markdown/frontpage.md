@@ -10,5 +10,3 @@
 `<w:fldSimple w:instr="DOCPROPERTY  author-meta \* MERGEFORMAT"></w:fldSimple>`{=openxml}
 /`<w:fldSimple w:instr="DOCPROPERTY  circle \* MERGEFORMAT"></w:fldSimple>`{=openxml}
 :::
-
-\newpage
