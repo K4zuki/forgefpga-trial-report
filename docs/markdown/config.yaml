@@ -1,5 +1,5 @@
 ---
-title: ForgeFPGA 試してみたレポート
+title: SLG47910V「ForgeFPGA」試してみたレポート
 subtitle: "[ 朗報 ] 幻ではなかった模様"
 circle: KY技研
 author: K4zuki
@@ -89,7 +89,7 @@ docx_coreprop:
     table-style: "Centered"
     para-style: "Table Body Center"
     rows:
-      - "ForgeFPGA 試してみたレポート"
+      - "SLG47910V「ForgeFPGA」試してみたレポート"
       - "K4zuki / KY技研"
       - "C104 2日目 西2ホール さ-34b / 2024"
       - "Markdown x Pandoc Version 2.19 (Docx writer)"
