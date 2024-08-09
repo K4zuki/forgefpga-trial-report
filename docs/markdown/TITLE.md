@@ -72,6 +72,14 @@ Table: SLG47910 Spec {#tbl:slg47910-spec}
 
 ## パッケージとピン配置
 
+0.4ミリピッチ24ピン、STQFN（Small Thin QFN？）パッケージ、３ミリ角。外形が小さすぎるせいか、
+放熱・グランド用のパッドはありません。24ピンのうちGPIOは最大19本（`GPIO0`～`GPIO18`）、
+そのうちSPIメモリまたはホストからのロードに兼用されているものが4本あります。
+
+残りはコア電源とIO電源に各1ピンずつ、メモリ保持とリセットに1ピンずつ、グラウンドで1ピンです。
+
+寸法図を見ると、パッドの大きさが均一ではないのでPCBライブラリ作成には注意が必要です。
+
 ![ピン配置図（データシート抜粋）](images/slg47910v-pinout-descriptions.png){#fig:pinout-description width=150mm}
 
 ![パッケージ図面（データシート抜粋）^[ボトムビューの1番ピンの位置がトップビューとあってなくて気持ち悪いなっておもいます]](images/slg47910v-package-dimension.png){#fig:package-dimension width=150mm}
