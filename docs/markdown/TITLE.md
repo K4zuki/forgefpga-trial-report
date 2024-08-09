@@ -113,7 +113,9 @@ SPI兼用ピンはGPIO3～6の4本です。`SPI_SS`と`PWR`/`EN`の設定によ�
 
 ## ダウンロード（Windows版）
 
-まず設計ソフトを入手します。参考リンク集から[ダウンロードページ](#ide-download-page)に行き、[Windows版](#ide-windows-download)を入手します。
+まず設計ソフトを入手します。GreenPAKと共通なので、すでに持っている方は最新版にアップデートしましょう。
+
+参考リンク集から[ダウンロードページ](#ide-download-page)に行き、[Windows版](#ide-windows-download)を入手します。
 ダイアログの頃とは異なり、ダウンロードには[ユーザ登録とログインが必要]{.underline}です。また、過去バージョンへのアクセスもなさそうです。そういうとこやぞ&reg;
 
 ![設計ソフトダウンロードページ](images/software_download_page.png){#fig:software-download-page width=150mm}
