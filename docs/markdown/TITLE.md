@@ -118,14 +118,36 @@ SPI兼用ピンはGPIO3～6の4本です。`SPI_SS`と`PWR`/`EN`の設定によ�
 従来のGreenPAKソフトのインターフェースと、ソースコード・テストベンチ編集、RTL・ビットストリーム生成、シミュレーションを行えるIDE
 の2ウィンドウで構成されます。
 
-GPAKインターフェースはIDEの起動、IOピンのドライブ能力の設定、ライタとの接続・実機デバッグ・書き込みを行います。
+GPAKインターフェースはIDEの起動、IOピンのドライブ能力やプルアップ・プルダウンの設定、ライタとの接続・実機デバッグ・書き込みを行います。
 
 ## ダウンロード（Windows版）
 
 参考リンク集から[ダウンロードページ](#ide-download-page)に行き、[Windows版](#ide-windows-download)を入手します。
-ダイアログの頃とは異なり、ダウンロードには[ユーザ登録とログインが必要]{.underline}です。また、過去バージョンへのアクセスもなさそうです。そういうとこやぞ&reg;
+ダイアログの頃とは異なり、ダウンロードには[ユーザ登録とログインが必要]{.underline}です。また、過去バージョンへのアクセスもなさそうです。
+そういうとこやぞ&reg;
 
 ![設計ソフトダウンロードページ](images/software_download_page.png){#fig:software-download-page width=150mm}
+
+## GreenPAKデザイナーインターフェース
+
+![IDEメインウィンドウ](images/software-gpak-window.png){#fig:software-gpak-window width=150mm}
+
+![IOピンコンフィグ](images/software-pin-config.png){#fig:software-pin-config width=100mm}
+
+![IDEデバッガ選択](images/software-debugger-select.png){#fig:software-debugger-select width=150mm}
+
+## IDEウィンドウ
+
+![software-ide-window.png](images/software-ide-window.png){#fig:software-ide-window width=150mm}
+
+### HDLのコンパイル（Synthesis）
+
+HDLのコンパイルには*iverilog*を使っているようです。ルネのダウンロードページに何もリンクの類いがないので、
+ソフトのインストールに伴って同時にインストールされると思います。
+
+### シミュレーション
+
+### ビットストリーム生成
 
 ::: rmnote
 
