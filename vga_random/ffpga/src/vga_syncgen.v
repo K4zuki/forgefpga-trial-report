@@ -2,31 +2,31 @@
 
 module vga_syncgen(clk, reset, hsync, vsync, display_on, hpos, vpos);
   // https://yuji2yuji.hatenablog.com/entry/2019/08/21/144446
-  input            clk;
-  input            reset;
-  output reg       hsync, vsync;
-  output reg       display_on;
-  output reg [9:0] hpos;
-  output reg [9:0] vpos;
+  input             clk;
+  input             reset;
+  output reg        hsync, vsync;
+  output reg        display_on;
+  output reg [10:0] hpos;
+  output reg [9:0]  vpos;
 
   // declarations for TV-simulator sync parameters
   // horizontal constants
-  parameter H_DISPLAY       = 640; // horizontal display width
-  parameter H_BACK          =  48; // horizontal left border (back porch)
-  parameter H_FRONT         =  16; // horizontal right border (front porch)
-  parameter H_SYNC          =  96; // horizontal sync width
+  parameter H_DISPLAY    = 1024; // horizontal display width
+  parameter H_FRONT      = 24;  // horizontal right border (front porch)
+  parameter H_SYNC       = 136;  // horizontal sync width
+  parameter H_BACK       = 160; // horizontal left border (back porch)
   // vertical constants
-  parameter V_DISPLAY       = 480; // vertical display height
-  parameter V_TOP           =  31; // vertical top border
-  parameter V_BOTTOM        =  11; // vertical bottom border
-  parameter V_SYNC          =   2; // vertical sync # lines
+  parameter V_DISPLAY    = 768; // vertical display height
+  parameter V_BOTTOM     = 3;   // vertical bottom border
+  parameter V_SYNC       = 6;   // vertical sync # lines
+  parameter V_TOP        = 29;  // vertical top border
   // derived constants
-  parameter H_SYNC_START    = H_DISPLAY + H_FRONT;
-  parameter H_SYNC_END      = H_DISPLAY + H_FRONT + H_SYNC - 1;
-  parameter H_MAX           = H_DISPLAY + H_BACK + H_FRONT + H_SYNC - 1;
-  parameter V_SYNC_START    = V_DISPLAY + V_BOTTOM;
-  parameter V_SYNC_END      = V_DISPLAY + V_BOTTOM + V_SYNC - 1;
-  parameter V_MAX           = V_DISPLAY + V_TOP + V_BOTTOM + V_SYNC - 1;
+  parameter H_SYNC_START = H_DISPLAY + H_FRONT;
+  parameter H_SYNC_END   = H_DISPLAY + H_FRONT + H_SYNC - 1;
+  parameter H_MAX        = H_DISPLAY + H_BACK + H_FRONT + H_SYNC - 1;
+  parameter V_SYNC_START = V_DISPLAY + V_BOTTOM;
+  parameter V_SYNC_END   = V_DISPLAY + V_BOTTOM + V_SYNC - 1;
+  parameter V_MAX        = V_DISPLAY + V_TOP + V_BOTTOM + V_SYNC - 1;
 
   wire hmaxxed = (hpos == H_MAX) || !reset;  // set when hpos is maximum
   wire vmaxxed = (vpos == V_MAX) || !reset;  // set when vpos is maximum
