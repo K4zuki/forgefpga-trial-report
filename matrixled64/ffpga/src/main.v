@@ -6,10 +6,10 @@
 
   (* iopad_external_pin *) output                   osc_en,
 
-  (* iopad_external_pin *) output [7:0]             o_row_oe,
-  (* iopad_external_pin *) output [7:0]             o_col_oe,
   (* iopad_external_pin *) output reg [7:0]         o_row,
+  (* iopad_external_pin *) output [7:0]             o_row_oe,
   (* iopad_external_pin *) output reg [7:0]         o_col,
+  (* iopad_external_pin *) output [7:0]             o_col_oe,
 
   (* iopad_external_pin *) output                   scan_clk_4k_out,
   (* iopad_external_pin *) output                   scan_clk_4k_oe,
@@ -57,7 +57,10 @@ refresh rate = 20Hz = 50ms
 0.25mx = 250us = 4kHz
 50M / 4k = 12500
 */
-  clk_divider scan_clk(
+  clk_divider #(
+  	.WIDTH  (16  ),
+  	.DIVISOR(2500)
+  	)scan_clk(
     .i_clk(i_clk      ),
     .o_clk(scan_clk_4k)
   );
@@ -70,13 +73,13 @@ refresh rate = 20Hz = 50ms
       row_en <= 1'b0;
     end else begin
       cnt_4k <= cnt_4k + 1;
-      if(cnt_4k > cnt_4k_max) begin
+      if (cnt_4k > (cnt_4k_max - 1)) begin
         cnt_4k <= 5'b0;
         row_ptr <= row_ptr + 1;
       end else begin
         row_en <= (cnt_4k < cnt_4k_duty) ? 1'b1 : 1'b0;
       end
-      o_row <= (row_en << row_ptr);
+      o_row <= ~(row_en << row_ptr);
       o_col <= rows[row_ptr];
     end
   end
