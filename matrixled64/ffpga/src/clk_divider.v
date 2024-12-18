@@ -1,5 +1,5 @@
 module clk_divider #(
-     parameter WIDTH   = 14,
+     parameter WIDTH   = 16,
      parameter DIVISOR = 12500
   )(
     input      i_clk,
