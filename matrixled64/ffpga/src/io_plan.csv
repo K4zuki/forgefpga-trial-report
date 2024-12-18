@@ -1,14 +1,14 @@
 POSITION;FUNCTION;PORT
 CLK tile[0, 0] clk_side=E Output0;;
 CLK tile[0, 0] clk_side=E Output1;;
-CLK tile[0, 0] clk_side=E Input0;LOGIC_AS_CLK0;i_clk_lac0
+CLK tile[0, 0] clk_side=E Input0;LOGIC_AS_CLK0;i_lac0
 CLK tile[0, 0] clk_side=E Input1;LOGIC_AS_CLK1;
 CLK tile[0, 0] clk_side=W Output0;;
 CLK tile[0, 0] clk_side=W Output1;;
 CLK tile[0, 0] clk_side=W Input0;OSC_CLK;i_clk
 CLK tile[0, 0] clk_side=W Input1;PLL_CLK;
-CLK tile[0, 0] clk_side=N Output0;REF_BRAM(0..3)_READ_CLK;
-CLK tile[0, 0] clk_side=N Output1;REF_BRAM(0..3)_WRITE_CLK;
+CLK tile[0, 0] clk_side=N Output0;REF_BRAM(0..3)_READ_CLK;scan_clk_out
+CLK tile[0, 0] clk_side=N Output1;REF_BRAM(0..3)_WRITE_CLK;scan_clk_out
 CLK tile[0, 0] clk_side=N Input0;;
 CLK tile[0, 0] clk_side=N Input1;;
 CLK tile[0, 0] clk_side=S Output0;REF_BRAM(4..7)_READ_CLK;
@@ -667,11 +667,11 @@ IOB tile[0, 0] coord[31, 10] Output0;INT_FPGA_RESET;
 IOB tile[0, 0] coord[31, 10] Output1;;
 IOB tile[0, 0] coord[31, 10] Input0;[PIN 11] nRST;i_nreset
 IOB tile[0, 0] coord[31, 10] Input1;[PIN 10] nSLEEP;
-IOB tile[0, 0] coord[31, 11] Output0;REF_LOGIC_AS_CLK0;scan_clk_4k_out
+IOB tile[0, 0] coord[31, 11] Output0;REF_LOGIC_AS_CLK0;scan_clk_out
 IOB tile[0, 0] coord[31, 11] Output1;REF_LOGIC_AS_CLK1;
 IOB tile[0, 0] coord[31, 11] Input0;FPGA_CORE_READY;
 IOB tile[0, 0] coord[31, 11] Input1;FUNC_MODE;
-IOB tile[0, 0] coord[31, 12] Output0;LOGIC_AS_CLK0_EN;scan_clk_4k_oe
+IOB tile[0, 0] coord[31, 12] Output0;LOGIC_AS_CLK0_EN;scan_clk_oe
 IOB tile[0, 0] coord[31, 12] Output1;LOGIC_AS_CLK1_EN;
 IOB tile[0, 0] coord[31, 12] Input0;;
 IOB tile[0, 0] coord[31, 12] Input1;;
