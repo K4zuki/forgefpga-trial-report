@@ -61,7 +61,6 @@
   assign rows[7] = 8'b1111_1111;
 
   clk_divider #(
-      .WIDTH  (8 ),
       .DIVISOR(50)
   	)scan_clk_gen(
       .i_clk(i_clk   ),

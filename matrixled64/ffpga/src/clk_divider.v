@@ -1,12 +1,11 @@
 module clk_divider #(
-     parameter WIDTH   = 16,
      parameter DIVISOR = 12500
   )(
     input      i_clk,
     output reg o_clk
 );
 
-  reg [WIDTH-1:0] counter = 0;
+  reg [$clog2(DIVISOR + 1) - 1 : 0] counter = 0;
 
   always @(posedge i_clk) begin
       counter <= counter + 1;
