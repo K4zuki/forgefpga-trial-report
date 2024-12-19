@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GPDProject version="34" oldestCompatibleVersion="32" GPDVersion="6.46.001" lastChange="19 Dec 2024 11:18:48" projectChecksumState="1" projectChecksum="fd02f86a">
+<GPDProject version="34" oldestCompatibleVersion="32" GPDVersion="6.46.001" lastChange="20 Dec 2024 00:12:05" projectChecksumState="1" projectChecksum="40920be1">
     <generalProjectSettings/>
     <chip family="04" type="06" friendlyName="FFPGA" partNumber="67" package="26">
-        <nvmData registerLenght="480">0 0 0 28 0 0 0 0 A5 A5 A5 A5 0 0 0 0 0 0 0 0 5A 5A 5A 5A 0 0 0 0 EE EE EE EE 22 22 22 22 22 22 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</nvmData>
-        <checksum crc32="0x48FDF965" version="2"/>
+        <nvmData registerLenght="480">0 0 0 28 0 0 0 0 A5 A5 A5 A5 0 0 0 0 0 0 0 0 5A 5A 5A 5A 0 0 0 0 AA AA AA AA 22 22 22 22 22 22 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</nvmData>
+        <checksum crc32="0xFA8DA747" version="2"/>
         <VDDItem id="0">
             <item id="0" caption="VDD (PIN 22)">
                 <graphics pos="(1350.00,143.10)" angle="0" flipping="2" hidden="0" tOrigin="(20.00,10.00)"/>
@@ -636,11 +636,11 @@
         <pipelineStagesStates>
             <pipelineStageState>
                 <pipelineStage>0</pipelineStage>
-                <pipelineState>1</pipelineState>
+                <pipelineState>3</pipelineState>
             </pipelineStageState>
             <pipelineStageState>
                 <pipelineStage>1</pipelineStage>
-                <pipelineState>3</pipelineState>
+                <pipelineState>1</pipelineState>
             </pipelineStageState>
         </pipelineStagesStates>
         <modules>
@@ -658,7 +658,7 @@
             <timing-constraints/>
         </modules>
         <io-spec-tool>
-            <records filter="130">
+            <records filter="144">
                 <record id="CLK_t[0:0]_E_in0">
                     <port-name>i_lac0</port-name>
                 </record>
