@@ -89,7 +89,7 @@
   assign testbus_oe = 3'b111;
   assign testbus[0] = scan_clk;
   assign testbus[1] = row_en;
-  assign testbus[2] = 1'b1;
+  assign testbus[2] = o_row[0];
 
   assign scan_clk_out = scan_clk;
   assign scan_clk_oe = 1'b1;
