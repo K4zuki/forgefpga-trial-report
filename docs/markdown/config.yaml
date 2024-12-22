@@ -1,11 +1,11 @@
 ---
-title: SLG47910V「ForgeFPGA」試してみたレポート
-subtitle: "[ 朗報 ] 幻ではなかった模様"
-circle: KY技研
-author: K4zuki
-comiket: C104 2日目 西2ホール さ-34b
-year: 2024
-publisher: キンコーズオンラインで印刷製本
+title: "SLG47910V「ForgeFPGA」試してみたレポート ２"
+subtitle: "[ 朗報 ] 3.3V動作できるようになりました"
+circle: "KY技研"
+author: "K4zuki"
+comiket: "C105 2日目 西2ホール い-15b"
+year: "2024"
+publisher: "キンコーズオンラインで印刷製本"
 docrevision: "1.0"
 # front: images/front-image.png
 #frontoption:
@@ -89,9 +89,9 @@ docx_coreprop:
     table-style: "Centered"
     para-style: "Table Body Center"
     rows:
-      - "SLG47910V「ForgeFPGA」試してみたレポート"
+      - "SLG47910V「ForgeFPGA」試してみたレポート ２"
       - "K4zuki / KY技研"
-      - "C104 2日目 西2ホール さ-34b / 2024"
+      - "C105 2日目 西2ホール い-15b / 2024"
       - "Markdown x Pandoc Version 2.19 (Docx writer)"
       - "キンコーズオンラインで印刷製本"
 ...
