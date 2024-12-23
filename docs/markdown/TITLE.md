@@ -66,7 +66,7 @@ VDDIOの範囲が拡張され、3.3V系でも動作するようになりまし�
 
 DigikeyとFutureの商品ページがリンクに追加されました。一方でAvnetへのリンクがなくなりました。
 
-![Digikeyがディストリビュータに追加・Avnetが消失・Futureはリンク切れ・Mouserはあるけどない？](images/buy-from-avnet.png){#fig:distributors width=120mm}
+![Digikeyがディストリビュータに追加・Avnetが消失・Futureはリンク切れ](images/buy-from-avnet.png){#fig:distributors width=120mm}
 
 あいにくDigikeyも5Kリールのみ・バックオーダー待ちです。Futureはリンクが切れています。
 
@@ -84,7 +84,7 @@ DigikeyとFutureの商品ページがリンクに追加されました。一方�
 
 # FPGAとLEDの接続
 
-通常の開発では、IO planタブの表にFPGA回路[^Verilogで書く部分]とIC内の周辺回路[^内蔵オシレータ、PLL，IOピンなど、Verilogで取り扱えない部分]
+通常の開発では、IO planタブの表にFPGA回路^[Verilogで書く部分] とIC内の周辺回路^[内蔵オシレータ、PLL，IOピンなど、Verilogで取り扱えない部分]
 の接続情報を打ち込んでいくのですが、実はこの表をCSVファイルでやり取りする方法があります。
 
 [io plan.csv](../matrixled64/ffpga/src/io_plan.csv){.table delimiter=";" #tbl:io-plan-csv}
@@ -142,15 +142,19 @@ DigikeyとFutureの商品ページがリンクに追加されました。一方�
 
 :::
 
-# 固定パターンを出すだけのサンプル
+# 固定パターンを出すだけのサンプルVerilogコード
 
-## Verilogコード
+斜めに半分だけ光らせるサンプルです。githubにプロジェクト一式置いておきます。
 
-### トップモジュール`top.v`
+## トップモジュール`top.v`
 
 [top.v](../matrixled64/ffpga/src/main.v){.listingtable type=verilog #lst:main-module-list}
 
-### クロック分周モジュール`clk_divider.v`
+\newpage
+
+## クロック分周モジュール`clk_divider.v`
+
+`i_clk`を`DIVISOR`分周したものを`o_clk`に出力します。
 
 [clk_divider.v](../matrixled64/ffpga/src/clk_divider.v){.listingtable type=verilog #lst:clk_divider-module-list}
 
