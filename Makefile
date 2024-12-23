@@ -1,11 +1,11 @@
-clean:
+html:
 	cd docs; \
-	make initdir clean
+	make initdir html
 
 docx:
 	cd docs; \
 	make initdir docx
 
-html:
+clean:
 	cd docs; \
-	make initdir html
+	make initdir clean
