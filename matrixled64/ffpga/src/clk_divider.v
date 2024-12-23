@@ -4,6 +4,10 @@ module clk_divider #(
     input      i_clk,
     output reg o_clk
 );
+/*
+o_clk = i_clk / DIVISOR
+about 50% duty cycle
+*/
 
   reg [$clog2(DIVISOR + 1) - 1 : 0] counter = 0;
 
