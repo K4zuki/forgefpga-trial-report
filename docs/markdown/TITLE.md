@@ -82,79 +82,36 @@ DigikeyとFutureの商品ページがリンクに追加されました。一方�
 
 ## 基板
 
-# FPGAとLEDの接続
+# 固定パターンを出すだけのサンプルプロジェクト
+
+斜めに半分だけ光らせるサンプルです。githubにプロジェクト一式置いておきます。
+
+#### ブロック図 {-}
+
+FPGA回路と周辺の接続ブロック図を示します。HDLで書く部分は緑色、IOピンは青、その他の周辺回路はオレンジ色の箱で示してあります。
+
+![ブロック図](images/port-connections.png){width=120mm #fig:port-connection-diagram}
+
+## IOプラン
+
+### CSVでIOプランをやり取り
 
 通常の開発では、IO planタブの表にFPGA回路^[Verilogで書く部分] とIC内の周辺回路^[内蔵オシレータ、PLL，IOピンなど、Verilogで取り扱えない部分]
 の接続情報を打ち込んでいくのですが、実はこの表をCSVファイルでやり取りする方法があります。
 
 [io plan.csv](../matrixled64/ffpga/src/io_plan.csv){.table delimiter=";" #tbl:io-plan-csv}
 
----
+## Verilogコード
 
-::: {.table}
-
-| IC Pin | Peripheral          | Direction | FPGA core       |
-|:------:|---------------------|:---------:|-----------------|
-|   NA   | `OSC_EN`            |   <==<    | `osc_en`        |
-|   NA   | `OSC_CLK`           |   >==>    | `i_clk`         |
-|   NA   | `REF_LOGIC_AS_CLK0` |   <==<    | `scan_clk_out`  |
-|   NA   | `LOGIC_AS_CLK0_EN`  |   <==<    | `scan_clk_oe`   |
-|   NA   | `LOGIC_AS_CLK0`     |   >==>    | `i_lac0`        |
-|   11   | `nRST`              |   >==>    | `i_nreset`      |
-|   13   | `GPIO0_OUT`         |   <==<    | `o_row[1]`      |
-|   13   | `GPIO0_OE`          |   <==<    | `o_row_oe[1]`   |
-|   14   | `GPIO1_OUT`         |   <==<    | `o_row[3]`      |
-|   14   | `GPIO1_OE`          |   <==<    | `o_row_oe[3]`   |
-|   15   | `GPIO2_OUT`         |   <==<    | `o_row[5]`      |
-|   15   | `GPIO2_OE`          |   <==<    | `o_row_oe[5]`   |
-|   16   | `GPIO3_OUT`         |   <==<    | `o_row[7]`      |
-|   16   | `GPIO3_OE`          |   <==<    | `o_row_oe[7]`   |
-|   17   | `GPIO4_OUT`         |   <==<    | `o_row[0]`      |
-|   17   | `GPIO4_OE`          |   <==<    | `o_row_oe[0]`   |
-|   18   | `GPIO5_OUT`         |   <==<    | `o_row[2]`      |
-|   18   | `GPIO5_OE`          |   <==<    | `o_row_oe[2]`   |
-|   19   | `GPIO6_OUT`         |   <==<    | `o_row[4]`      |
-|   19   | `GPIO6_OE`          |   <==<    | `o_row_oe[4]`   |
-|   20   | `GPIO7_OUT`         |   <==<    | `o_row[6]`      |
-|   20   | `GPIO7_OE`          |   <==<    | `o_row_oe[6]`   |
-|   23   | `GPIO8_OUT`         |   <==<    | `o_col[6]`      |
-|   23   | `GPIO8_OE`          |   <==<    | `o_col_oe[6]`   |
-|   24   | `GPIO9_OUT`         |   <==<    | `o_col[4]`      |
-|   24   | `GPIO9_OE`          |   <==<    | `o_col_oe[4]`   |
-|   1    | `GPIO10_OUT`        |   <==<    | `o_col[2]`      |
-|   1    | `GPIO10_OE`         |   <==<    | `o_col_oe[2]`   |
-|   2    | `GPIO11_OUT`        |   <==<    | `o_col[0]`      |
-|   2    | `GPIO11_OE`         |   <==<    | `o_col_oe[0]`   |
-|   3    | `GPIO12_OUT`        |   <==<    | `o_col[7]`      |
-|   3    | `GPIO12_OE`         |   <==<    | `o_col_oe[7]`   |
-|   4    | `GPIO13_OUT`        |   <==<    | `o_col[5]`      |
-|   4    | `GPIO13_OE`         |   <==<    | `o_col_oe[5]`   |
-|   5    | `GPIO14_OUT`        |   <==<    | `o_col[3]`      |
-|   5    | `GPIO14_OE`         |   <==<    | `o_col_oe[3]`   |
-|   6    | `GPIO15_OUT`        |   <==<    | `o_col[1]`      |
-|   6    | `GPIO15_OE`         |   <==<    | `o_col_oe[1]`   |
-|   7    | `GPIO16_OUT`        |   <==<    | `testbus[0]`    |
-|   7    | `GPIO16_OE`         |   <==<    | `testbus_oe[0]` |
-|   8    | `GPIO17_OUT`        |   <==<    | `testbus[1]`    |
-|   8    | `GPIO17_OE`         |   <==<    | `testbus_oe[1]` |
-|   9    | `GPIO18_OUT`        |   <==<    | `testbus[2]`    |
-|   9    | `GPIO18_OE`         |   <==<    | `testbus_oe[2]` |
-
-:::
-
-# 固定パターンを出すだけのサンプルVerilogコード
-
-斜めに半分だけ光らせるサンプルです。githubにプロジェクト一式置いておきます。
-
-## トップモジュール`top.v`
+### トップモジュール`top.v`
 
 [top.v](../matrixled64/ffpga/src/main.v){.listingtable type=verilog #lst:main-module-list}
 
 \newpage
 
-## クロック分周モジュール`clk_divider.v`
+### クロック分周モジュール`clk_divider.v`
 
-`i_clk`を`DIVISOR`分周したものを`o_clk`に出力します。
+`i_clk`を`DIVISOR`分周したものを`o_clk`に出力します^[divisorは除数の意]。
 
 [clk_divider.v](../matrixled64/ffpga/src/clk_divider.v){.listingtable type=verilog #lst:clk_divider-module-list}
 
