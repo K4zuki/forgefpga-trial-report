@@ -61,16 +61,16 @@
   assign rows[7] = 8'b1111_1111;
 
   clk_divider #(
-      .DIVISOR(50)
-  	)scan_clk_gen(
-      .i_clk(i_clk   ),
-      .o_clk(scan_clk)
+    .DIVISOR(50)
+  )scan_clk_gen(
+    .i_clk(i_clk   ),
+    .o_clk(scan_clk)
   );
 
   always @(posedge i_lac0) begin
     if (i_nreset == 1'b0) begin
       row_ptr <= 3'b000;
-      o_row <= 8'b0;
+      row <= 8'b0;
       scan_cnt <= 'd0;
       row_en <= 1'b0;
     end else begin
@@ -81,15 +81,15 @@
       end else begin
         row_en <= (scan_cnt < (SCAN_DUTY_INT - 1)) ? 1'b1 : 1'b0;
       end
-      o_row <= ~(row_en << row_ptr);
-      o_col <= rows[row_ptr];
+      row <= ~(row_en << row_ptr);
+      col <= rows[row_ptr];
     end
   end
 
   assign testbus_oe = 3'b111;
   assign testbus[0] = scan_clk;
   assign testbus[1] = row_en;
-  assign testbus[2] = o_row[0];
+  assign testbus[2] = row[0];
 
   assign scan_clk_out = scan_clk;
   assign scan_clk_oe = 1'b1;
