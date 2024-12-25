@@ -14,7 +14,13 @@ foreach ($file in $files)
         }
         else
         {
+            Write-Host "$( $file.Name ) ... converting"
             $doc = $word.Documents.OpenNoRepairDialog($file.FullName)
+            foreach ($pp in $doc.InlineShapes)
+            {
+                $pp.LockAspectRatio = $true
+            }
+            $doc.Save()
             $doc.SaveAs([ref] $file.FullName.Replace(".docx", ".pdf"), [ref]17)
             $doc.Close()
             Write-Host "$($file.FullName.Replace(".docx", ".pdf") ) ... done"
