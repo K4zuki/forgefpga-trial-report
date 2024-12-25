@@ -98,9 +98,11 @@ DigikeyとFutureの商品ページがリンクに追加されました。一方�
 
 # 固定パターンを出すだけのサンプルプロジェクト
 
-斜めに半分だけ光らせるサンプルです。githubにプロジェクト一式置いておきます。
+斜めに半分光らせるだけのサンプルです。解像度がとても低いので1250fps出ます。
 
-#### ブロック図 {-}
+原稿リポジトリにプロジェクト一式置いてあります。`matrixled64`フォルダを参照してください。
+
+## ブロック図 {-}
 
 FPGA回路と周辺の接続ブロック図を示します。HDLで書く部分は緑色、IOピンは青、その他の周辺回路はオレンジ色の箱で示してあります。
 
@@ -108,7 +110,17 @@ FPGA回路と周辺の接続ブロック図を示します。HDLで書く部分�
 
 ## Verilogコード
 
+VerilogHDLで書いた実装例を示します。テストベンチはありません。その他実装が甘いですがご容赦ください。
+
 ### トップモジュール`top.v`
+
+内部オシレータの出力を`i_clk`として受け取り、これを50分周して`scan_clk`を得ます。オシレータは50MHzなので、`scan_clk`は1MHzになります。
+`scan_clk`をそのまま他の回路のクロックに適用するとPnRがコケてしまうので、LaC(Logic as Clock)を経由させます。LaCを起動する`scan_clk_oe`と
+入力信号`scan_clk_out`をつなげ、LaC出力を`lac0`として受け取ります。
+
+LEDの8行を`row`、8列を`col`に割り当ててピンに接続しています。
+
+明るさとフレーム数を調整できるようになっていますが、現在はハードコードされてます。
 
 [top.v](../matrixled64/ffpga/src/main.v){.listingtable type=verilog #lst:main-module-list}
 
@@ -116,7 +128,8 @@ FPGA回路と周辺の接続ブロック図を示します。HDLで書く部分�
 
 ### クロック分周モジュール`clk_divider.v`
 
-`i_clk`を`DIVISOR`分周したものを`o_clk`に出力します^[divisorは除数の意]。
+`i_clk`を`DIVISOR`分周したものを`o_clk`に出力します^[divisorは除数の意]。奇数分周のときはデューティが50％になりません。
+`DIVISOR`は2以上を想定しています。`DIVISOR = 1`のときはたぶんLに張り付きます。
 
 [clk_divider.v](../matrixled64/ffpga/src/clk_divider.v){.listingtable type=verilog #lst:clk_divider-module-list}
 
