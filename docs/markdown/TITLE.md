@@ -78,9 +78,23 @@ DigikeyとFutureの商品ページがリンクに追加されました。一方�
 
 # マトリクスLEDと基板の仕様
 
+[本家解説ページ](#pmodboard-readme)を抜粋した内容です。ぜひそちらも参照してください。
+
 ## LED
 
+本家の通りOSL641501-ARA(高輝度赤発光・カソードコモン)を使いました。
+
+![スペック一覧](images/matrixled-spec.png){width=150mm #fig:matrixled-spec}
+
+![ピン配置](images/matrixled-pinout.png){width=150mm #fig:matrixled-pinout}
+
 ## 基板
+
+制限抵抗に手持ちの2.2kを使ったので暗めですが、SLG47910のIOを痛めたくないのでまあ良しとしています。
+
+![回路図（LED・コネクタ接続部拡大）](images/matrixled-spec.png){width=150mm #fig:matrixled-schematic}
+
+![回路図（タイトル部拡大）](images/matrixled-pinout.png){width=150mm #fig:matrixled-schematic-copyright}
 
 # 固定パターンを出すだけのサンプルプロジェクト
 
