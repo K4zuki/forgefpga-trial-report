@@ -92,9 +92,9 @@ DigikeyとFutureの商品ページがリンクに追加されました。一方�
 
 制限抵抗に手持ちの2.2kを使ったので暗めですが、SLG47910のIOを痛めたくないのでまあ良しとしています。
 
-![回路図（LED・コネクタ接続部拡大）](images/matrixled-spec.png){width=150mm #fig:matrixled-schematic}
+![回路図（LED・コネクタ接続部拡大）](images/matrixled-schematic.png){width=150mm #fig:matrixled-schematic}
 
-![回路図（タイトル部拡大）](images/matrixled-pinout.png){width=150mm #fig:matrixled-schematic-copyright}
+![回路図（タイトル部拡大）](images/matrixled-schematic-copyright.png){width=150mm #fig:matrixled-schematic-copyright}
 
 # 固定パターンを出すだけのサンプルプロジェクト
 
