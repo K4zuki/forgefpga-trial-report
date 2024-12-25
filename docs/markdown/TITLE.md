@@ -110,11 +110,15 @@ DigikeyとFutureの商品ページがリンクに追加されました。一方�
 
 原稿リポジトリにプロジェクト一式置いてあります。`matrixled64`フォルダを参照してください。
 
-## ブロック図 {-}
+## GPIOの割り当て {-}
+
+![基板接続図](images/board-connection.png){height=75mm #fig:board-connection}
+
+## 内部回路ブロック図 {-}
 
 FPGA回路と周辺の接続ブロック図を示します。HDLで書く部分は緑色、IOピンは青、その他の周辺回路はオレンジ色の箱で示してあります。
 
-![ブロック図](images/port-connections.png){width=150mm #fig:port-connection-diagram}
+![ブロック図](images/port-connections.png){height=75mm #fig:port-connection-diagram}
 
 ## Verilogコード
 
@@ -144,8 +148,6 @@ LEDの8行を`row`、8列を`col`に割り当ててピンに接続していま�
 ## IOプラン
 
 FPGA回路^[Verilogで書く部分] とIC内の周辺回路^[内蔵オシレータ、PLL，IOピンなど、Verilogで取り扱えない部分] の接続テーブルです。
-
-### CSVでIOプランをやり取り
 
 [io plan.csv](../matrixled64/ffpga/src/io_plan.csv){.table delimiter=";" width=[0.5,0.5] subset_from=(1,2) #tbl:io-plan-csv}
 
