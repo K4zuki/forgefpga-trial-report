@@ -106,15 +106,6 @@ FPGA回路と周辺の接続ブロック図を示します。HDLで書く部分�
 
 ![ブロック図](images/port-connections.png){width=120mm #fig:port-connection-diagram}
 
-## IOプラン
-
-### CSVでIOプランをやり取り
-
-通常の開発では、IO planタブの表にFPGA回路^[Verilogで書く部分] とIC内の周辺回路^[内蔵オシレータ、PLL，IOピンなど、Verilogで取り扱えない部分]
-の接続情報を打ち込んでいくのですが、実はこの表をCSVファイルでやり取りする方法があります。
-
-[io plan.csv](../matrixled64/ffpga/src/io_plan.csv){.table delimiter=";" #tbl:io-plan-csv}
-
 ## Verilogコード
 
 ### トップモジュール`top.v`
@@ -128,6 +119,14 @@ FPGA回路と周辺の接続ブロック図を示します。HDLで書く部分�
 `i_clk`を`DIVISOR`分周したものを`o_clk`に出力します^[divisorは除数の意]。
 
 [clk_divider.v](../matrixled64/ffpga/src/clk_divider.v){.listingtable type=verilog #lst:clk_divider-module-list}
+
+## IOプラン
+
+FPGA回路^[Verilogで書く部分] とIC内の周辺回路^[内蔵オシレータ、PLL，IOピンなど、Verilogで取り扱えない部分] の接続テーブルです。
+
+### CSVでIOプランをやり取り
+
+[io plan.csv](../matrixled64/ffpga/src/io_plan.csv){.table delimiter=";" width=[0.5,0.5] subset_from=(1,2) #tbl:io-plan-csv}
 
 # あとがき
 
