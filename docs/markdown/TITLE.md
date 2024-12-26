@@ -154,7 +154,7 @@ FPGA回路^[Verilogで書く部分] とIC内の周辺回路^[内蔵オシレー�
 エクスポートしたままのCSVファイルは500行くらいありますが、インポートの際は欠損があっても受け付けてくれるようなので、
 今回のデザインに無関係な行は削除しています。CSVファイルはセミコロン区切り形式なので、エクセルなどで扱うときは注意が必要です。
 
-![開発ソフト内で設定](images/io-plan-ui.png){width=120mm #fig:io-plan-ui}
+![開発ソフト内で設定](images/io-plan-ui.png){width=150mm #fig:io-plan-ui}
 
 ![インポート・エクスポート](images/io-plan-import-export.png){width=120mm #fig:io-plan-import-export}
 
