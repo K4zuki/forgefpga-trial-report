@@ -127,16 +127,14 @@ VerilogHDLで書いた実装例を示します。テストベンチはありま�
 ### トップモジュール`top.v`
 
 内部オシレータの出力を`i_clk`として受け取り、これを50分周して`scan_clk`を得ます。オシレータは50MHzなので、`scan_clk`は1MHzになります。
-`scan_clk`をそのまま他の回路のクロックに適用するとPnRがコケてしまうので、LaC(Logic as Clock)を経由させます。LaCを起動する`scan_clk_oe`と
-入力信号`scan_clk_out`をつなげ、LaC出力を`lac0`として受け取ります。
+`scan_clk`をそのまま他の回路のクロックに適用するとPnRが失敗してしまうので、LaC(Logic as Clock)を経由させます。
+LaCを起動する`scan_clk_oe`とLaCの入力信号`scan_clk_out`をつなげ、LaC出力を`lac0`として受け取ります。
 
-LEDの8行を`row`、8列を`col`に割り当ててピンに接続しています。
+LEDの8行を`row`、8列を`col`に割り当ててIOピンに接続しています。行ごとの点灯データは`rows`という名前でハードコードされています。
 
-明るさとフレーム数を調整できるようになっていますが、現在はハードコードされてます。
+明るさとフレーム数を調整できるようになっていますが、現在はハードコードされています。
 
 [top.v](../matrixled64/ffpga/src/main.v){.listingtable type=verilog #lst:main-module-list}
-
-\newpage
 
 ### クロック分周モジュール`clk_divider.v`
 
@@ -145,11 +143,24 @@ LEDの8行を`row`、8列を`col`に割り当ててピンに接続していま�
 
 [clk_divider.v](../matrixled64/ffpga/src/clk_divider.v){.listingtable type=verilog #lst:clk_divider-module-list}
 
+\newpage
+
 ## IOプラン
 
 FPGA回路^[Verilogで書く部分] とIC内の周辺回路^[内蔵オシレータ、PLL，IOピンなど、Verilogで取り扱えない部分] の接続テーブルです。
+開発ソフト内で設定するのが標準です（プロジェクトファイルに埋め込まれる・[@fig:io-plan-ui]）が、CSVファイルにエクスポート・CSVからの
+インポートもできます^[CSV以外の形式にもエクスポートできますが、試していません。]（[@fig:io-plan-import-export]）。
+[@tbl:io-plan-csv]は加工済みCSVファイルを元に表にしたものです。
+エクスポートしたままのCSVファイルは500行くらいありますが、インポートの際は欠損があっても受け付けてくれるようなので、
+今回のデザインに無関係な行は削除しています。CSVファイルはセミコロン区切り形式なので、エクセルなどで扱うときは注意が必要です。
 
-[io plan.csv](../matrixled64/ffpga/src/io_plan.csv){.table delimiter=";" width=[0.5,0.5] subset_from=(1,2) #tbl:io-plan-csv}
+![開発ソフト内で設定](images/io-plan-ui.png){width=120mm #fig:io-plan-ui}
+
+![インポート・エクスポート](images/io-plan-import-export.png){width=120mm #fig:io-plan-import-export}
+
+\newpage
+
+[io plan.csv](../matrixled64/ffpga/src/io_plan.csv){.table delimiter=";" width=[0.4,0.3,0.3] #tbl:io-plan-csv}
 
 # あとがき
 
