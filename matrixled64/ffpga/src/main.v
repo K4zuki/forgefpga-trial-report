@@ -1,23 +1,26 @@
 // The (*top*) attribute is needed on the topmost module for synthesis
 (* top *) module main(
-  (* iopad_external_pin, clkbuf_inhibit *) input    i_clk,
-  (* iopad_external_pin, clkbuf_inhibit *) input    i_lac0,
-  (* iopad_external_pin *) input                    i_nreset,
+  (* iopad_external_pin, clkbuf_inhibit *) input    i_clk, /* Receives integrated oscillator output */
+  (* iopad_external_pin, clkbuf_inhibit *) input    i_lac0, /* Receives LaC output */
+  (* iopad_external_pin *) input                    i_nreset, /* Receives nRST pin status */
 
-  (* iopad_external_pin *) output                   osc_en,
+  (* iopad_external_pin *) output                   osc_en, /* Enables integrated oscillator; const H */
 
-  (* iopad_external_pin *) output reg [7:0]         o_row,
-  (* iopad_external_pin *) output [7:0]             o_row_oe,
-  (* iopad_external_pin *) output reg [7:0]         o_col,
-  (* iopad_external_pin *) output [7:0]             o_col_oe,
+  (* iopad_external_pin *) output reg [7:0]         row, /* ROW signal output */
+  (* iopad_external_pin *) output [7:0]             o_row_oe, /* ROW pins output enable; const H */
+  (* iopad_external_pin *) output reg [7:0]         col, /* COL signal output */
+  (* iopad_external_pin *) output [7:0]             o_col_oe, /* COL pins output enable; const H */
 
-  (* iopad_external_pin *) output                   scan_clk_out,
-  (* iopad_external_pin *) output                   scan_clk_oe,
+  (* iopad_external_pin *) output                   scan_clk_out, /* Sends to LaC0 block; 1MHz */
+  (* iopad_external_pin *) output                   scan_clk_oe, /* Enables LaC0 block; const H */
 
-  (* iopad_external_pin *) output [2:0]             testbus,
-  (* iopad_external_pin *) output [2:0]             testbus_oe
+  (* iopad_external_pin *) output [2:0]             testbus, /* Internal signal monitoring output array */
+  (* iopad_external_pin *) output [2:0]             testbus_oe /* Test signal pins output enable; const H */
 
 );
+
+  parameter FPS            = 1250; /* Frames Per Second */
+  parameter BRIGHTNESS     = 80; /* Percentage */
 
   /*
   scan clock = 50M / 50 = 1MHz
@@ -33,24 +36,24 @@
   125000                  | 1
   */
 
-  parameter FPS            = 1250;
-  parameter BRIGHTNESS     = 80;
+  parameter MAX_SCAN_COUNT = 1_000_000 / (FPS * 8); /* usec per row */
+  parameter SCAN_DUTY_INT  = BRIGHTNESS * MAX_SCAN_COUNT / 100; /* Hi level duration in usec */
 
-  parameter MAX_SCAN_COUNT = 1_000_000 / (FPS * 8);
-  parameter SCAN_DUTY_INT  = BRIGHTNESS * MAX_SCAN_COUNT / 100;
-
+  /* Constant Hi signals */
   assign osc_en = 1'b1;
-
-  reg [2:0] row_ptr;
-  reg row_en;
-  reg [15:0] scan_cnt;
-
-  wire [7:0] rows[7:0];
-  reg scan_clk;
-
   assign o_row_oe = 8'hFF;
   assign o_col_oe = 8'hFF;
+  assign testbus_oe = 3'b111;
+  assign scan_clk_oe = 1'b1;
 
+  reg [2:0] row_ptr; /* ROW focus pointer */
+  reg row_en; /* ROW pulls cuurent when this is Hi */
+  reg [15:0] scan_cnt; /* Timing generation counter */
+
+  reg scan_clk; /* Receives clock divider output */
+
+  /* Data */
+  wire [7:0] rows[7:0];
   assign rows[0] = 8'b0000_0001;
   assign rows[1] = 8'b0000_0011;
   assign rows[2] = 8'b0000_0111;
@@ -60,6 +63,7 @@
   assign rows[6] = 8'b0111_1111;
   assign rows[7] = 8'b1111_1111;
 
+  /* 50M to 1M clock divider */
   clk_divider #(
     .DIVISOR(50)
   )scan_clk_gen(
@@ -86,12 +90,10 @@
     end
   end
 
-  assign testbus_oe = 3'b111;
   assign testbus[0] = scan_clk;
   assign testbus[1] = row_en;
   assign testbus[2] = row[0];
 
   assign scan_clk_out = scan_clk;
-  assign scan_clk_oe = 1'b1;
 
 endmodule
