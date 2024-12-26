@@ -140,14 +140,14 @@ LEDの8行を`row`、8列を`col`に割り当ててIOピンに接続していま
 
 明るさとフレーム数を調整できるようになっていますが、現在は80%・1250fpsにハードコードされています。
 
-[top.v](../matrixled64/ffpga/src/main.v){.listingtable type=verilog #lst:main-module-list}
+[`top.v`](../matrixled64/ffpga/src/main.v){.listingtable type=verilog #lst:main-module-list}
 
 ### クロック分周モジュール`clk_divider.v`
 
 `i_clk`を`DIVISOR`分周したものを`o_clk`に出力します^[divisorは除数の意]。奇数分周のときはデューティが50％になりません。
 `DIVISOR`は2以上を想定しています。`DIVISOR = 1`のときはたぶんLに張り付きます。
 
-[clk_divider.v](../matrixled64/ffpga/src/clk_divider.v){.listingtable type=verilog #lst:clk_divider-module-list}
+[`clk_divider.v`](../matrixled64/ffpga/src/clk_divider.v){.listingtable type=verilog #lst:clk_divider-module-list}
 
 \newpage
 
