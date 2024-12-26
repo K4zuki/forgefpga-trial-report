@@ -1,21 +1,40 @@
 // The (*top*) attribute is needed on the topmost module for synthesis
 (* top *) module main(
-  (* iopad_external_pin, clkbuf_inhibit *) input    i_clk, /* Receives integrated oscillator output */
-  (* iopad_external_pin, clkbuf_inhibit *) input    i_lac0, /* Receives LaC output */
-  (* iopad_external_pin *) input                    i_nreset, /* Receives nRST pin status */
+  (* iopad_external_pin, clkbuf_inhibit *) input    i_clk,
+  /* Receives integrated oscillator output */
 
-  (* iopad_external_pin *) output                   osc_en, /* Enables integrated oscillator; const H */
+  (* iopad_external_pin, clkbuf_inhibit *) input    i_lac0,
+  /* Receives LaC output */
 
-  (* iopad_external_pin *) output reg [7:0]         row, /* ROW signal output */
-  (* iopad_external_pin *) output [7:0]             o_row_oe, /* ROW pins output enable; const H */
-  (* iopad_external_pin *) output reg [7:0]         col, /* COL signal output */
-  (* iopad_external_pin *) output [7:0]             o_col_oe, /* COL pins output enable; const H */
+  (* iopad_external_pin *) input                    i_nreset,
+  /* Receives nRST pin status */
 
-  (* iopad_external_pin *) output                   scan_clk_out, /* Sends to LaC0 block; 1MHz */
-  (* iopad_external_pin *) output                   scan_clk_oe, /* Enables LaC0 block; const H */
+  (* iopad_external_pin *) output                   osc_en,
+  /* Enables integrated oscillator; const H */
 
-  (* iopad_external_pin *) output [2:0]             testbus, /* Internal signal monitoring output array */
-  (* iopad_external_pin *) output [2:0]             testbus_oe /* Test signal pins output enable; const H */
+  (* iopad_external_pin *) output reg [7:0]         row,
+  /* ROW signal output */
+
+  (* iopad_external_pin *) output [7:0]             o_row_oe,
+  /* ROW pins output enable; const H */
+
+  (* iopad_external_pin *) output reg [7:0]         col,
+  /* COL signal output */
+
+  (* iopad_external_pin *) output [7:0]             o_col_oe,
+  /* COL pins output enable; const H */
+
+  (* iopad_external_pin *) output                   scan_clk_out,
+  /* Sends to LaC0 block; 1MHz */
+
+  (* iopad_external_pin *) output                   scan_clk_oe,
+  /* Enables LaC0 block; const H */
+
+  (* iopad_external_pin *) output [2:0]             testbus,
+  /* Internal signal monitoring output array */
+
+  (* iopad_external_pin *) output [2:0]             testbus_oe
+  /* Test signal pins output enable; const H */
 
 );
 
